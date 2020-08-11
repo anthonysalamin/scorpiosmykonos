@@ -2,6 +2,7 @@
  * Datepicker using mobiscroll.js + moment.js v.10
  * BUILD: 31.07.2020 | anthonysalamin.ch
  */
+//
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
   // globals
