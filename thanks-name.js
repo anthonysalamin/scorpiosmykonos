@@ -4,6 +4,8 @@
  * BUILD: 31.07.2020 | anthonysalamin.ch
 */
 (function thanks() {
+    "use strict";
+    // globals
     const log = console.log,
           url = window.location.href, // "https://www.scorpiosmykonos.com/thanks?name={{name}}"
           injectName = document.getElementsByClassName("thanks-name")[0],
