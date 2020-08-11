@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function requiredCheck() {
+  "use strict";
   // globals
   const log = console.log,
     forms = new Set(document.getElementsByClassName("form-block")),

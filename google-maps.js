@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Google Maps callback triggered when Google Maps API script is loaded
 function initMap() {
+  "use strict";
   // Options  
    const lattitude = 37.40665844521265,
     longitude = 25.347776714013662,

@@ -4,6 +4,7 @@
  * BUILD: 01.08.2020 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
+  "use strict";
   // 🥗 globals
   const log = console.log,
     scrollBar = document.scrollingElement,
