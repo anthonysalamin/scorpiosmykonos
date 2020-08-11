@@ -1,5 +1,6 @@
 /*
- * Form validation v.6
+ * Form validation
+ * CODEPEN: Scorpios | Form validation v.6 
  * BUILD: 20.07.2020 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {

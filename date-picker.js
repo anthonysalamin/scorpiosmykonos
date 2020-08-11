@@ -1,6 +1,6 @@
 /*
  * Date Picker
- * CODEPEN REF: Scorpios | Date picker v.10
+ * CODEPEN: Scorpios | Date picker v.10
  * DEPENDENCIES: mobiscroll.js + moment.js
  * BUILD: 11.08.2020 | anthonysalamin.ch
  */

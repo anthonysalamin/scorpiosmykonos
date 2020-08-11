@@ -1,6 +1,6 @@
 /*
  * Email Validation
- * CODEPEN REF. Email validation v.2
+ * CODEPEN: Scorpios | Email validation v.2
  * BUILD: 31.07.2020 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {

@@ -1,5 +1,6 @@
 /*
  * Google Maps (lazy loaded)
+ * TO DO: protet API key
  * BUILD: 01.07.2020 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
