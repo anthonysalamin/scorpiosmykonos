@@ -1,5 +1,5 @@
 /*
- * Date Picke
+ * Date Picker
  * DEPENDENCIES: mobiscroll.js + moment.js
  * BUILD: 11.08.2020 | anthonysalamin.ch
  */
