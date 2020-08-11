@@ -1,0 +1,15 @@
+/*
+ * Responsive usemap image areas
+ * BUILD 03.07.2020 | anthonysalamin.ch
+*/
+.locations {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  display: block;
+  position: relative;
+}
