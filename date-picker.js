@@ -1,9 +1,10 @@
 /*
  * Date Picker
  * CODEPEN: Scorpios | Date picker v.10
- * DEPENDENCIES: mobiscroll.js + moment.js
+ * DEPENDENCIES: mobiscroll.js + mobiscroll.css + moment.js
  * BUILD: 11.08.2020 | anthonysalamin.ch
- */
+*/
+
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
   // globals
