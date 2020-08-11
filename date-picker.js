@@ -4,7 +4,6 @@
  * DEPENDENCIES: mobiscroll.js + mobiscroll.css + moment.js
  * BUILD: 11.08.2020 | anthonysalamin.ch
 */
-
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
   // globals
