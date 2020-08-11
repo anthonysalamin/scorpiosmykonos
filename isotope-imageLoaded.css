@@ -2,18 +2,21 @@
  * Isotope + imagesLoaded
  * BUILD: 11.07.2020 | anthonysalamin.ch
 */
+
 .grid:after {
   content: "";
   display: block;
   clear: both;
 }
-.grid-sizer,
-.item {
+
+.grid-sizer, .item {
   width: 33.333%;
 }
+
 .item {
   float: left;
 }
+
 .item img {
   display: block;
   max-width: 100%;

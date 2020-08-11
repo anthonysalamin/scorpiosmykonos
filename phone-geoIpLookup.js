@@ -46,7 +46,7 @@ function girlGimmeYourNumber() {
       geoIpLookup: function (success, failure) {
         $.get(
           `https://ipinfo.io?token=${token}`,
-          function () {},
+          function () { },
           "jsonp"
         ).always(function (response) {
           let countryCode =
@@ -77,13 +77,13 @@ function girlGimmeYourNumber() {
       } else {
         log(
           `😡 Oops, your number ${number} seems ${
-            validity ? "legit" : "invalid"
+          validity ? "legit" : "invalid"
           }, please try again.`
         );
 
         // edge cases if number invalid
         let numberLength = number.length;
-        
+
         if (numberLength < 3) {
           input.placeholder = "";
           setTimeout(function () {

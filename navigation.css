@@ -3,6 +3,7 @@
  * CODEPEN: Responsive navigation system v.51
  * BUILD: 16.07.2020 | anthonysalamin.ch
 */
+
 #navi-navigation {
   display: block;
   position: absolute;
@@ -17,7 +18,8 @@
   /*top: -100%;*/
   width: 100%;
   height: 160px;
-  opacity: 0; /* to avoid flickering on page load */
+  opacity: 0;
+  /* to avoid flickering on page load */
   z-index: 1;
   justify-content: center;
   background-color: #f0eae2;
@@ -34,6 +36,7 @@
 }
 
 /* nav links hover start  */
+
 #navi-overlay a:after {
   position: absolute;
   opacity: 0;
@@ -53,13 +56,14 @@
   opacity: 1;
   width: 100%;
 }
+
 /* nav links hover end  */
 
 .navi-link {
   color: black;
   text-decoration: none;
   margin: 0px 10px 0px 10px;
-  padding-bottom: 10px ;
+  padding-bottom: 10px;
   position: relative;
   cursor: pointer;
 }
@@ -70,11 +74,14 @@
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
-  position: relative; /* dynamic: fixed */
+  position: relative;
+  /* dynamic: fixed */
   width: 100%;
   height: 60px;
-  top: 0%; /* dynamic: -100% */
-  background-color: transparent; /* dynamic: white */
+  top: 0%;
+  /* dynamic: -100% */
+  background-color: transparent;
+  /* dynamic: white */
   color: white;
   opacity: 1;
   z-index: 2;
@@ -100,6 +107,7 @@
 /*/////////////////////////////////////////////////////*/
 
 /* 🍓 Hamburger */
+
 :root {
   --menu-width: 50px;
   --menu-stroke-width: 6;
@@ -135,33 +143,38 @@
   fill: none;
   stroke: white;
   stroke-width: var(--menu-stroke-width);
-  transition: stroke-dasharray var(--menu-animation-speed),
-    stroke-dashoffset var(--menu-animation-speed);
+  transition: stroke-dasharray var(--menu-animation-speed), stroke-dashoffset var(--menu-animation-speed);
 }
+
 .line1 {
   stroke-dasharray: 60 207;
-  sstroke-width: var(--menu-stroke-width);
+  stroke-width: var(--menu-stroke-width);
 }
+
 .line2 {
   stroke-dasharray: 60 60;
   stroke-width: var(--menu-stroke-width);
 }
+
 .line3 {
   stroke-dasharray: 60 207;
   stroke-width: var(--menu-stroke-width);
 }
+
 .menu .line1 {
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;
   stroke-width: var(--menu-stroke-width);
   stroke: var(--menu-stroke-color-open) !important;
 }
+
 .menu .line2 {
   stroke-dasharray: 1 60;
   stroke-dashoffset: -30;
   stroke-width: var(--menu-stroke-width);
   stroke: var(--menu-stroke-color-open) !important;
 }
+
 .menu .line3 {
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;

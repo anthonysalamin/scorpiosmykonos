@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         })
       );
-    } catch (err) {}
+    } catch (err) { }
     let wheelOpt = supportsPassive ? { passive: false } : false;
     let wheelEvent =
       "onwheel" in document.createElement("div") ? "wheel" : "mousewheel";
