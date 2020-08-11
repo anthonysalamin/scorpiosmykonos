@@ -215,9 +215,7 @@ function initMap() {
   });
 } // end initMap()
 
-/*
- * Create Google Maps script source API
- */
+// Create Google Maps script source API
 function loadGoolgeMapsAPI() {
   let script = document.createElement("script");
   let key = `AIzaSyBx_RKxcocR9mbmf5aGe2HxLadt1lAsb4c`, // 😈 website restricted
