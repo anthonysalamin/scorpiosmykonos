@@ -13,7 +13,7 @@
 
     $wildcard = FALSE; // set to TRUE if no need to limit domains
     $credentials = FALSE; // set TRUE if expecting credential requests (Cookies, Authentication, SSL certificates)
-    $allowedOrigins = array('https://scorpiosdev.webflow.io', 'https://copyscorpiosmykonos.webflow.io/');
+    $allowedOrigins = array('https://scorpiosdev.webflow.io', 'https://copyscorpiosmykonos.webflow.io');
     if (!in_array($_SERVER['HTTP_ORIGIN'], $allowedOrigins) && !$wildcard) {
         // origin is not allowed
         exit;
