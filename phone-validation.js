@@ -42,6 +42,8 @@ function girlGimmeYourNumber() {
       // onlyCountries: [],
       // excludeCountries: [],
       preferredCountries: ["de", "us", "gr", "ch"],
+      initialCountry: "gr",
+      /*
       initialCountry: "auto",
       geoIpLookup: function (success, failure) {
         $.get(
@@ -54,6 +56,7 @@ function girlGimmeYourNumber() {
           success(countryCode);
         });
       }
+      */
     });
 
     // 🧠 function checking phone input
