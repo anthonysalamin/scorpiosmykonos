@@ -1,11 +1,24 @@
 /*
  * Google Maps (lazy loaded)
- * TO DO: protet API key
+ * TO DO: protect API key
  * BUILD: 01.07.2020 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
     loadGoolgeMapsAPI();
 });
+
+// create Google Maps API source
+function loadGoolgeMapsAPI() {
+    let script = document.createElement("script");
+    let key = `AIzaSyBx_RKxcocR9mbmf5aGe2HxLadt1lAsb4c`, // 😈 website restricted
+        language = `en`,
+        region = `us`,
+        callback = `initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&language=${language}&region=${region}&callback=${callback}`; // 🥑 production
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+}
 
 // Google Maps callback triggered when Google Maps API script is loaded
 function initMap() {
@@ -216,16 +229,3 @@ function initMap() {
         // icon: markerIcon,
     });
 } // end initMap()
-
-// Create Google Maps script source API
-function loadGoolgeMapsAPI() {
-    let script = document.createElement("script");
-    let key = `AIzaSyBx_RKxcocR9mbmf5aGe2HxLadt1lAsb4c`, // 😈 website restricted
-        language = `en`,
-        region = `us`,
-        callback = `initMap`;
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&language=${language}&region=${region}&callback=${callback}`; // 🥑 production
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-}
