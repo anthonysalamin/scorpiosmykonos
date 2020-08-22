@@ -4,7 +4,7 @@
 */
 
 :root {
-  --color: #333333;
+  --color: red; /* #333333 */
   --color-bar: #e4e4e4;
   --color-text-min-max: #a2a2a2;
   --thickness: 3px;
