@@ -42,19 +42,18 @@ function girlGimmeYourNumber() {
       // onlyCountries: [],
       // excludeCountries: [],
       preferredCountries: ["de", "us", "gr", "ch"],
-      initialCountry: "gr",
+      initialCountry: "gr", // "auto"
       /*
-      initialCountry: "auto",
-      geoIpLookup: function (success, failure) {
-        $.get(
-          `https://ipinfo.io?token=${token}`,
-          function () { },
-          "jsonp"
-        ).always(function (response) {
-          let countryCode =
-            response && response.country ? response.country : "gr";
-          success(countryCode);
-        });
+      geoIpLookup: (callback) => {
+        fetch(`https://ipinfo.io?token=${token}`)
+          .then((response) => response.json()) // parse response
+          .then((data) => {
+            const countryCode = data && data.country ? data.country : "gr";
+            callback(countryCode);
+          })
+          .catch((err) => {
+            log(`Oops, something went wrong: ${err}`);
+          });
       }
       */
     });
