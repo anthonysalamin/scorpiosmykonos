@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // 🧠 try to fetch server response
                 let response = await fetch(url, {
                     // no need for header as body is a FormData stream
-                    // header: Content-Type: application/json,
+                    // header: Content-Type: application/json, // need to stringify body json
                     method: method,
                     body: body
                 });
@@ -174,6 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert(`Oops, something went wrong: ${error}`);
                 submit.value = "try again"; // 😏 good luck
             } // end try/catch
-        } // fetchAsyncAwait()
+        } // end fetchAsyncAwait()
     }); // end for each form
 }); // end DOM listener
