@@ -3,6 +3,7 @@
  * BUILD 02.08.2020 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
+  log("this is FETCH commented out version");
   girlGimmeYourNumber();
 });
 
