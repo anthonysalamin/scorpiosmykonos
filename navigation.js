@@ -299,6 +299,13 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.style.opacity = 1;
       } else if (!menu) {
         // 🍋 wrapper above limit on menu closed
+
+        // EXPERMINETAL ⚠️
+        if(trigger.position == "undefined") {
+          trigger.position = currentScrollpos;
+        }
+        // EXPERMINETAL ⚠️
+
         if (trigger.position < limit) {
           if (trigger.direction == "up") {
             // show wrapper on scroll up within limit

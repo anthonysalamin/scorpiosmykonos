@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, delay);
         }; // end throttleFunction()
 
-        // 🥬 async-await & fetch API
+        // 🥬 async-await fetch API
         async function fetchAsyncAwait() {
             const url = `${protocol}://${subdomain}.${domain}/${file}_v${version}.${extention}`,
                 method = "POST",
@@ -112,9 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // experimental
                 if (response.ok) {
-                    log("fetch resource successful");
+                    log("fetch resource successful, response ok.");
                 } else {
-                    log("Oops, there was a problem in the fetch request");
+                    log("Oops, there was a problem in the fetch request.");
                 }
 
                 // 🧠 try convert JSON into JavaScript object
