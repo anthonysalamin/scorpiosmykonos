@@ -1,9 +1,8 @@
 /*
  * Phone geoIpLookup v.4
- * BUILD 02.08.2020 | anthonysalamin.ch
+ * Build date: 23/08/2020 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
-  log("this is FETCH commented out version");
   girlGimmeYourNumber();
 });
 
