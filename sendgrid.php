@@ -46,7 +46,7 @@
     require("/home/einmgpmu/public_html/sendgrid-php/sendgrid-php.php");
 
     // sendGrid credentials
-    $APIkey = 'XXX'; // sendgrid verified domain API key
+    $APIkey = 'XXXX'; // sendgrid verified domain API key
     $fromEmail = 'hello@anthonysalamin.ch'; // sendgrid verified email address
     $fromName = 'Scorpios Mykonos';
 

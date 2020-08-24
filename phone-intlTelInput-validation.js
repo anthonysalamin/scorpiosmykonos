@@ -1,7 +1,8 @@
 /*
- * Phone geoIpLookup v.4
+ * Phone intlTelInput validation
  * Build date: 23/08/2020 | anthonysalamin.ch
- */
+*/
+
 document.addEventListener("DOMContentLoaded", () => {
   girlGimmeYourNumber();
 });
@@ -41,7 +42,7 @@ function girlGimmeYourNumber() {
       autoPlaceholder: "aggressive",
       // onlyCountries: [],
       // excludeCountries: [],
-      preferredCountries: ["de", "us", "gr", "ch"],
+      preferredCountries: ["de", "us", "gr"],
       initialCountry: "gr", // "auto"
       /*
       geoIpLookup: (callback) => {
@@ -100,7 +101,7 @@ function girlGimmeYourNumber() {
       } // end if number is valid
     }; // end checkNumber()
 
-    // 🧠 on input keyup, check number every x milliseconds
+    // 🧠 on input keyup, check number every 10 milliseconds
     input.addEventListener("keyup", debounce(checkNumber, 10));
   }); // end for each form
 } // end girlGimmeYourNumber()
