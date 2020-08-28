@@ -1,8 +1,8 @@
 <?php
 
     /*
-     * SendGrid API v.3
-     * BUILD: 05.08.2020 | anthonysalamin.ch
+     * SendGrid API v.4
+     * Build date: 05/08/2020 | anthonysalamin.ch
     */
 
     // handle CORS request + preflight

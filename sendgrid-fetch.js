@@ -3,7 +3,7 @@
  * fetch API + CORS + SendGrid web API
  * DEPENDENCIES: jQuery.js (for fade animations)
  * INFO: https://javascript.info/fetch || https://javascript.info/async-await
- * BUILD: 20.08.2020 | anthonyslamin.ch
+ * Builde date: 20/08/2020 | anthonyslamin.ch
  */
 
 // 🍆 unbind default form handling

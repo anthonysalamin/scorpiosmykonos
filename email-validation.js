@@ -95,4 +95,4 @@ document.addEventListener("DOMContentLoaded", () => {
       emailInput.addEventListener("keyup", debounce(emailValidation, speed));
     }); // end for each form
   } // end emailCheck()
-});
+}); // end DOMContentLoaded
