@@ -1,7 +1,6 @@
 /*
  * Responsive Navigation System
- * CODEPEN: Responsive navigation system v.51
- * BUILD: 16.07.2020 | anthonysalamin.ch
+ * Build date: 16/07/2020 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   // globals
@@ -55,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
           return "mobile";
         } // end if
       })(); // end device variable
-      log(device);
+      log(`🟢 Device type is ${device}`);
     } // end deviceSize()
     deviceSize();
 
@@ -268,13 +267,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // define if menu is open or not
       menu = (() => {
         if (wrapper.classList[1] == "invert") {
-          log("overlay opened");
+          log("🟢 Overlay menu opened.");
           if (device == "mobile") {
             disableScroll();
           }
           return true;
         } else {
-          log("overlay closed");
+          log("🟢 overlay menu closed.");
           if (device == "mobile") {
             enableScroll();
           }
@@ -282,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })(); // end menu variable
     });
-    log(menu);
+    // log(menu);
 
     // 🍓 check if scroll position is in range
     function inRange(position, min, max) {
@@ -319,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
           trigger.direction == "up"
         ) {
           // 🍋 wrapper within limit on menu closed
-          log("trigger up position is in range");
+          log("🟢 Trigger up position is in range.");
           // show wrapper on scroll within limit
           logotype.style.fill = "white";
           Array.from(lines).forEach((line) => {
