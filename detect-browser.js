@@ -18,7 +18,7 @@ function searchAndDestroy() {
     }, 1500);
   } else {
     // good user, rock on
-    console.log("Yay 🍑 your modern browser is " + userAgent[1]);
+    console.log("🟢 Yay, your modern browser is " + userAgent[1]);
   }
 }
 searchAndDestroy();
