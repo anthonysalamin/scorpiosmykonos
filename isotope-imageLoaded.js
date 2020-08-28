@@ -1,7 +1,8 @@
 /*
  * Isotope + imagesLoaded
- * BUILD: 11.07.2020 | anthonysalamin.ch
- */
+ * Build date: 11/07/2020 | anthonysalamin.ch
+*/
+
 document.addEventListener(
   "DOMContentLoaded",
   () => {

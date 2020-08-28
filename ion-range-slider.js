@@ -1,6 +1,6 @@
 /*
- * ion range slider
- * build date: 31/07/2020
+ * Ion range slider
+ * Build date: 31/07/2020
  */
 
 // 🍉 plural management
