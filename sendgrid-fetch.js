@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         subdomain = "development",
         domain = "einmelden.de",
         file = "sendgrid",
-        version = 4,
+        version = 4, // 4 = stable version, 5 is experiemental with new namecheap server structure (scorpiosmykonos folder)
         extention = "php";
     let submit;
 
