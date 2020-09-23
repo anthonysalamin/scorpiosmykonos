@@ -1,10 +1,10 @@
 /*
- * SendGrid | ⚠️ (async/await fetch API) v.7
- * fetch API + CORS + SendGrid web API
- * DEPENDENCIES: jQuery.js (for fade animations)
- * INFO: https://javascript.info/fetch || https://javascript.info/async-await
- * Builde date: 20/08/2020 | anthonyslamin.ch
- */
+* SendGrid v.7
+* fetch API + CORS + SendGrid web API
+* DEPENDENCIES: jQuery (for fade animations)
+* INFO: https://javascript.info/fetch || https://javascript.info/async-await
+* Builde date: 23/09/2020 | anthonyslamin.ch
+*/
 
 // 🍆 unbind default form handling
 var Webflow = Webflow || [];
@@ -24,10 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
         speed = 500,
         throttlingSpeed = 800,
         protocol = "https",
-        subdomain = "development",
-        domain = "einmelden.de",
+        subdomain = "mail",
+        domain = "tlh-sierre.ch",
+        folder = "scorpiosmykonos",
         file = "sendgrid",
-        version = 4, // 4 = stable version, 5 is experiemental with new namecheap server structure (scorpiosmykonos folder)
+        version = 7,
         extention = "php";
     let submit;
 
@@ -97,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // 🥬 async-await fetch API
         async function fetchAsyncAwait() {
-            const url = `${protocol}://${subdomain}.${domain}/${file}_v${version}.${extention}`,
+            const url = `${protocol}://${subdomain}.${domain}/${folder}/${file}_v${version}.${extention}`,
                 method = "POST",
                 body = new FormData(form);
 
