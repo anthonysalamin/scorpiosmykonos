@@ -1,7 +1,14 @@
 /*
  * Mobiscroll Datepicker CSS
- * BUILD: 11.08.2020
+ * BUILD: 20.11.2020
 */
+
+@font-face {
+  font-family: "icons_mobiscroll";
+  src: url('https://uploads-ssl.webflow.com/5e53b00333d3682a2440085e/5fb80b18d3b0e25300d79aba_icons_mobiscroll.woff') format('woff'), url('https://uploads-ssl.webflow.com/5e53b00333d3682a2440085e/5fb80b18800726fd76c31cdc_icons_mobiscroll.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --mobiscroll-color: #333333;
@@ -607,13 +614,6 @@
     opacity: 1;
     -webkit-transform: translateY(100%);
   }
-}
-
-@font-face {
-  font-family: "icons_mobiscroll";
-  src: url('https://uploads-ssl.webflow.com/5e53b00333d3682a2440085e/5fb80b18d3b0e25300d79aba_icons_mobiscroll.woff') format('woff'), url('https://uploads-ssl.webflow.com/5e53b00333d3682a2440085e/5fb80b18800726fd76c31cdc_icons_mobiscroll.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 .mbsc-ic:before {
