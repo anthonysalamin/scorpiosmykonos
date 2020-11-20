@@ -611,7 +611,7 @@
 
 @font-face {
   font-family: "icons_mobiscroll";
-  src: url("https://uploads-ssl.webflow.com/5efca505d3455f445ff03198/5f09f26fc99ebf5a58c7fc36_icons_mobiscroll.woff?unklrn") format("woff"), url("https://uploads-ssl.webflow.com/5efca505d3455f445ff03198/5f09f26fc99ebf5a58c7fc36_icons_mobiscroll.woff") format("woff"), url("https://uploads-ssl.webflow.com/5efca505d3455f445ff03198/5f09f25dbf7bfc5109fd49a1_icons_mobiscroll.ttf?unklrn") format("truetype");
+  src: url('https://uploads-ssl.webflow.com/5e53b00333d3682a2440085e/5fb80b18d3b0e25300d79aba_icons_mobiscroll.woff') format('woff'), url('https://uploads-ssl.webflow.com/5e53b00333d3682a2440085e/5fb80b18800726fd76c31cdc_icons_mobiscroll.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
