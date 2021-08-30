@@ -1,10 +1,10 @@
 /*
- * Email Validation
- * CODEPEN: Scorpios | Email validation v.2
+ * SCORPIOS | email validation V.2 🟢
  * BUILD: 31.07.2020 | anthonysalamin.ch
- */
+*/
 document.addEventListener("DOMContentLoaded", () => {
-  "use strict";
+  // RAT
+  console.log("RAT");
   // globals
   const log = console.log,
     forms = new Set(document.getElementsByClassName("form-block")),
@@ -95,4 +95,4 @@ document.addEventListener("DOMContentLoaded", () => {
       emailInput.addEventListener("keyup", debounce(emailValidation, speed));
     }); // end for each form
   } // end emailCheck()
-}); // end DOMContentLoaded
+});
