@@ -1,4 +1,3 @@
-console.clear();
 /*
  * SCORPIOS | 🟢 Date picker V.14
  * Last build: 09/09/2021 10:59 | anthonysalamin.ch
