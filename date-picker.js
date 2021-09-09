@@ -1,14 +1,15 @@
 /*
- * SCORPIOS | 🟢 Date picker V.14
- * Last build: 09/09/2021 10:59 | anthonysalamin.ch
+ * 🟢 SCORPIOS | Date picker V.14
+ * Last build: 09/09/2021 14:10 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,
-    seasonStart = { day: 23, month: 5, year: 2021 },
-    seasonEnd = { day: 3, month: 10, year: 2021 },
+    currentYear = new Date().getFullYear(),
+    seasonStart = { day: 23, month: 5, year: currentYear },
+    seasonEnd = { day: 3, month: 10, year: currentYear },
     daysLimit = 30, // limit reservation timeframe (30 = 1 month)
-    seasonHasAnEnd = true,    
+    seasonHasAnEnd = true,
     forms = document.getElementsByClassName("form-block"),
     monthIds = [
       "January",
@@ -37,13 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
       seasonStart.day
     )
   );
-  
+
   const max = new Date(
-    date.setUTCFullYear(
-      seasonEnd.year,
-      seasonEnd.month - 1,
-      seasonEnd.day
-    )
+    date.setUTCFullYear(seasonEnd.year, seasonEnd.month - 1, seasonEnd.day)
   );
 
   const object = {
