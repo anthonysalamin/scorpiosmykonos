@@ -1,13 +1,15 @@
+console.clear();
 /*
- * Date Picker
- * CODEPEN: Scorpios | Date picker v.10
- * DEPENDENCIES: mobiscroll.js + mobiscroll.css + moment.js
- * BUILD: 11.08.2020 | anthonysalamin.ch
-*/
+ * SCORPIOS | 🟢 Date picker V.14
+ * Last build: 09/09/2021 10:59 | anthonysalamin.ch
+ */
 document.addEventListener("DOMContentLoaded", () => {
-  "use strict";
   // globals
   const log = console.log,
+    seasonStart = { day: 23, month: 5, year: 2021 },
+    seasonEnd = { day: 3, month: 10, year: 2021 },
+    daysLimit = 30, // limit reservation timeframe (30 = 1 month)
+    seasonHasAnEnd = true,    
     forms = document.getElementsByClassName("form-block"),
     monthIds = [
       "January",
@@ -23,12 +25,33 @@ document.addEventListener("DOMContentLoaded", () => {
       "November",
       "December"
     ];
-  let now = new Date(),
-    today = new Date(now.setDate(now.getDate())),
-    limit = new Date(now.setUTCFullYear(2020, 8, 27)), // 27 september 2020
-    object = {
-      min: today,
-      max: limit,
+
+  const date = new Date(),
+    today = new Date(date.setDate(date.getDate())),
+    future = new Date(date.setDate(date.getDate() + daysLimit)); // x days in the future
+
+  // min date
+  const min = new Date(
+    date.setUTCFullYear(
+      seasonStart.year,
+      seasonStart.month - 1,
+      seasonStart.day
+    )
+  );
+  
+  const max = new Date(
+    date.setUTCFullYear(
+      seasonEnd.year,
+      seasonEnd.month - 1,
+      seasonEnd.day
+    )
+  );
+
+  const object = {
+      // if today's date is more recent than the season's start...
+      // ... then use today's date as min value for each day until the season ends
+      min: Date.parse(today) > Date.parse(min) ? today : min,
+      max: seasonHasAnEnd ? max : future,
       dateFormat: "dd/mm/yyyy",
       display: "center",
       layout: "layout",
@@ -62,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
         calendar.addEventListener("change", () => {
           const dateSelected = calendar.value, // DD/MM/YYYY
             valueMonth = dateSelected.split("/")[1];
-          hiddenMonth.value = monthIds[valueMonth - 1];
+          hiddenMonth.value = monthIds[valueMonth - 1]; // zero indexed handling
 
           // format date with moment.js
           const momentFormat = moment(dateSelected, "DD/MM/YYYY").format(
