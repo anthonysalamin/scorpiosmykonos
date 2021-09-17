@@ -1,6 +1,6 @@
 /*
- * Cookie Sign Up
- * BUILD: 02.07.2020 | anthonysalamin.ch
+ * 🟢 SCORPIOS | cookie sign up V.1
+ * build: 02.07.2020 21:55 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   // globals

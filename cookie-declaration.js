@@ -1,12 +1,11 @@
 /*
- * Cookie Declaration
- * BUILD: 02.07.2020 | anthonysalamin.ch
+ * 🟢 SCORPIOS | cookie declaration V.1
+ * build: 02.07.2020 21:59 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   // options
   const cookieName = "Scorpios Mykonos Cookie Declaration",
     cookieValue = "Accepted",
-    // cookieDomain = "scorpiosmykonos.com",
     popupDelay = 1, // delay in seconds after which the popup appears
     dayStored = 365, // days during which the cookie is stored in user's browser
     speed = 500;
@@ -38,12 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
     date.setTime(date.getTime() + dayStored * 24 * 60 * 60 * 1000);
 
     // 🧠 create cookie on button click to expire on newly defined date
-
     popupButton.addEventListener("click", () => {
       log("GDPR 🍪 created and stored");
       Cookies.set(cookieName, cookieValue, {
         expires: date
-        // domain: cookieDomain // ⚠️ activate domain for production
       }); // end set cookie
     }); // end listener
   } else {
