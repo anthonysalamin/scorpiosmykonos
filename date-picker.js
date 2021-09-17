@@ -4,6 +4,7 @@
  */
 document.addEventListener("DOMContentLoaded", () => {
   // globals
+  console.log("hi from date-picker.js");
   const log = console.log,
     currentYear = new Date().getFullYear(),
     seasonStart = { day: 23, month: 5, year: currentYear },
