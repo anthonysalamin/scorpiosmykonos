@@ -1,10 +1,8 @@
 /*
- * Scroll-based logo visibility
- * CODPEN: Scorpios |  Scroll-based logo visibility 
- * BUILD: 01.08.2020 | anthonysalamin.ch
- */
+ * 🟢 SCORPIOS | scroll-based logo visibility V.1
+ * build: 01.08.2020 21:47 | anthonysalamin.ch
+*/
 document.addEventListener("DOMContentLoaded", () => {
-  "use strict";
   // 🥗 globals
   const log = console.log,
     scrollBar = document.scrollingElement,

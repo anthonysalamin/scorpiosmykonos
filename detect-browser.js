@@ -1,6 +1,7 @@
 /*
- * Browser detection 
+ * 🟢 SCORPIOS | browser detection V.1
  * detect msie and redirect to Chrome download page
+ * build: 17.09.2021 21:39 | anthonysalamin.ch
 */
 function searchAndDestroy() {
   var internetExplorer = navigator.userAgent.match(/Trident.*rv[ :]*11\./i);
@@ -18,7 +19,7 @@ function searchAndDestroy() {
     }, 1500);
   } else {
     // good user, rock on
-    console.log("🟢 Yay, your modern browser is " + userAgent[1]);
+    console.log("Yay 🍑 your modern browser is " + userAgent[1]);
   }
 }
 searchAndDestroy();
