@@ -1,8 +1,8 @@
 /*
- * 🟢 SCORPIOS | Date picker V.14
+ * 🟢 SCORPIOS | date picker V.14
  * Last build: 09/09/2021 14:10 | anthonysalamin.ch
  */
-console.log("hi from date-picker.js");
+console.log("date-picker.js V.14 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,
@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const max = new Date(
     date.setUTCFullYear(seasonEnd.year, seasonEnd.month - 1, seasonEnd.day)
   );
+  log(max);
 
   const object = {
       // if today's date is more recent than the season's start...
