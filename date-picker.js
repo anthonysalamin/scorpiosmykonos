@@ -2,9 +2,9 @@
  * 🟢 SCORPIOS | Date picker V.14
  * Last build: 09/09/2021 14:10 | anthonysalamin.ch
  */
+console.log("hi from date-picker.js");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
-  console.log("hi from date-picker.js");
   const log = console.log,
     currentYear = new Date().getFullYear(),
     seasonStart = { day: 23, month: 5, year: currentYear },
