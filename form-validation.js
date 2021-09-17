@@ -1,14 +1,12 @@
 /*
- * Form validation
- * CODEPEN: Scorpios | Form validation v.6 
- * BUILD: 20.07.2020 | anthonysalamin.ch
+ * 🟢 SCORPIOS  | form validation V.6 
+ * build: 20.07.2020 22:24 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   requiredCheck();
 });
 
 function requiredCheck() {
-  "use strict";
   // globals
   const log = console.log,
     forms = new Set(document.getElementsByClassName("form-block")),
