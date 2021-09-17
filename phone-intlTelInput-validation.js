@@ -1,14 +1,12 @@
 /*
- * Phone intlTelInput validation
- * Build date: 23/08/2020 | anthonysalamin.ch
-*/
-
+ * 🟢 SCORPIOS | phone intlTelInput validation V.4
+ * build 02.08.2020 22:47 | anthonysalamin.ch
+ */
 document.addEventListener("DOMContentLoaded", () => {
   girlGimmeYourNumber();
 });
 
 function girlGimmeYourNumber() {
-  "use strict";
   // globals
   const log = console.log,
     forms = document.getElementsByClassName("form-wrapper"),
