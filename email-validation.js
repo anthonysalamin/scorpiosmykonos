@@ -3,8 +3,6 @@
  * Build: 30.08.2021 18:00 | anthonysalamin.ch
 */
 document.addEventListener("DOMContentLoaded", () => {
-  // RAT
-  console.log("RAT scorpios");
   // globals
   const log = console.log,
     forms = new Set(document.getElementsByClassName("form-block")),
