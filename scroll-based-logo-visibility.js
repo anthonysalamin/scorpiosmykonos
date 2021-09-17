@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const log = console.log,
     scrollBar = document.scrollingElement,
     logotype = document.getElementsByClassName("logo-link-white")[0],
-    check = document.getElementById("check"),
-    status = document.getElementById("status"),
+    // check = document.getElementById("check"),
+    // status = document.getElementById("status"),
     limit = 600, // in pixels
     speed = 20; // in milliseconds
   let inRange;
@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
       logotype.style.opacity = "0";
     } // end if
 
-    check.textContent = `scroll position: ${currentScrollpos} px`;
-    status.textContent = `logotype is: ${inRange ? "visible" : "hidden"}`;
+    // check.textContent = `scroll position: ${currentScrollpos} px`;
+    // status.textContent = `logotype is: ${inRange ? "visible" : "hidden"}`;
   } // end triggerMe()
 
   // 🥥 run triggerMe on scroll every x milliseconds
