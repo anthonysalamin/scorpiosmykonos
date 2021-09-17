@@ -1,14 +1,12 @@
 /*
- * FormBackend AJAX request
- * CODEPEN: Scorpios | FormBackend AJAX request v.6
- * BUILD: 18.07.2020 | anthonysalamin.ch
+ * 🟢 SCORPIOS | FormBackend AJAX request V.6
+ * build: 18.07.2020 22:40 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   ajaxMe();
 });
 
 function ajaxMe() {
-  "use strict";
   // globals
   const log = console.log,
     forms = document.getElementsByClassName("form-wrapper"),
