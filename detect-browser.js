@@ -3,6 +3,7 @@
  * detect msie and redirect to Chrome download page
  * build: 17.09.2021 21:39 | anthonysalamin.ch
 */
+console.log("browser detection V.1 loaded");
 function searchAndDestroy() {
   var internetExplorer = navigator.userAgent.match(/Trident.*rv[ :]*11\./i);
   var userAgent = navigator.userAgent.match(
