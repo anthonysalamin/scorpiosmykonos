@@ -1,3 +1,4 @@
+/* 🔴 SCORPIOS | weglot multilanguage V.1 | build: 26.06.2020 22:11 */
 Weglot.initialize({ api_key: "wg_0d48bebd939d455579cfc61d3ab2fb353" }),
   Weglot.on("initialized", () => {
     const e = Weglot.getCurrentLang();
