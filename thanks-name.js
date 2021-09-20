@@ -3,6 +3,7 @@
  * CODEPEN: Scorpios | Thanks v.1
  * BUILD: 31.07.2020 | anthonysalamin.ch
 */
+console.log("Thanks v.1 loaded");
 (function thanks() {
       "use strict";
       // globals

@@ -1,7 +1,9 @@
 /*
- * Responsive usemap image areas
+ * Responsive usemap image areas V.0
+ * note: not implemented yet
  * BUILD 03.07.2020 | anthonysalamin.ch
  */
+console.log("Responsive usemap image areas V.0 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   createAreas();
   responsiveUseMap();

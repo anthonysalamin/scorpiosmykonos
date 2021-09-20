@@ -2,6 +2,7 @@
  * 🟢 SCORPIOS | cookie declaration V.1
  * build: 02.07.2020 21:59 | anthonysalamin.ch
  */
+console.log("cookie declaration V.1 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // options
   const cookieName = "Scorpios Mykonos Cookie Declaration",

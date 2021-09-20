@@ -2,6 +2,7 @@
  * 🟢 SCORPIOS | scroll-based logo visibility V.1
  * build: 01.08.2020 21:47 | anthonysalamin.ch
 */
+console.log("scroll-based logo visibility V.1 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // 🥗 globals
   const log = console.log,

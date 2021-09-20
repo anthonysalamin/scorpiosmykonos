@@ -2,7 +2,7 @@
  * 🟢 SCORPIOS | date picker V.14
  * Last build: 09/09/2021 14:10 | anthonysalamin.ch
  */
-console.log("date-picker.js V.14 loaded");
+console.log("date-picker V.14 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,

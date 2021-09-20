@@ -2,6 +2,7 @@
  * 🟢 SCORPIOS | cookie sign up V.1
  * build: 02.07.2020 21:55 | anthonysalamin.ch
  */
+console.log("cookie sign up V.1 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,

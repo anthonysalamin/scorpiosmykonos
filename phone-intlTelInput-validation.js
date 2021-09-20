@@ -2,6 +2,7 @@
  * 🟢 SCORPIOS | phone intlTelInput validation V.4
  * build 02.08.2020 22:47 | anthonysalamin.ch
  */
+console.log("phone intlTelInput validation V.4 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   girlGimmeYourNumber();
 });

@@ -1,11 +1,11 @@
 /*
 * SendGrid v.7
-* fetch API + CORS + SendGrid web API
+* fetch API + CORS + SendGrid web API (not implemented yet)
 * DEPENDENCIES: jQuery (for fade animations)
 * INFO: https://javascript.info/fetch || https://javascript.info/async-await
 * Builde date: 23/09/2020 | anthonyslamin.ch
 */
-
+console.log("SendGrid v.7 loaded");
 // 🍆 unbind default form handling
 var Webflow = Webflow || [];
 Webflow.push(() => {

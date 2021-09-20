@@ -2,7 +2,7 @@
  * 🟢 SCORPIOS | email validation V.2
  * Build: 30.08.2021 18:00 | anthonysalamin.ch
 */
-console.log("hi from email-validation.js");
+console.log("email-validation.js V.2 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,

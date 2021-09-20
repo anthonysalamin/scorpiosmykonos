@@ -2,6 +2,7 @@
  * 🟢 SCORPIOS  | form validation V.6 
  * build: 20.07.2020 22:24 | anthonysalamin.ch
  */
+console.log("form validation V.6  loaded");
 document.addEventListener("DOMContentLoaded", () => {
   requiredCheck();
 });

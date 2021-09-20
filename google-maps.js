@@ -1,8 +1,9 @@
 /*
- * Google Maps (lazy loaded)
+ * Google Maps (lazy loaded) V.0
  * TO DO: protect API key
  * BUILD: 01.07.2020 | anthonysalamin.ch
  */
+console.log("Google Maps (lazy loaded) V.0 loaded");
 document.addEventListener("DOMContentLoaded", () => {
     loadGoolgeMapsAPI();
 });

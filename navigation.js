@@ -1,7 +1,9 @@
 /*
- * Responsive Navigation System
+ * Responsive Navigation System V.0
+ * note: not implemented yet
  * Build date: 16/07/2020 | anthonysalamin.ch
  */
+console.log("Responsive Navigation System V.0 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,

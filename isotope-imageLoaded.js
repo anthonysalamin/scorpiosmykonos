@@ -1,8 +1,8 @@
 /*
- * Isotope + imagesLoaded
+ * Isotope + imagesLoaded V.0
  * Build date: 11/07/2020 | anthonysalamin.ch
 */
-
+console.log("Isotope + imagesLoaded V.0 loaded");
 document.addEventListener(
   "DOMContentLoaded",
   () => {

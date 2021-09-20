@@ -2,6 +2,7 @@
  * 🟢 SCORPIOS | FormBackend AJAX request V.6
  * build: 18.07.2020 22:40 | anthonysalamin.ch
  */
+console.log("FormBackend AJAX request V.6 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   ajaxMe();
 });

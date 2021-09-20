@@ -2,6 +2,7 @@
  * 🟢 SCORPIOS | soho member id V1
  * build: 29.03.2021 16:30 |anthonysalamin.ch
  */
+console.log("soho member id V1 loaded");
 document.addEventListener("DOMContentLoaded", () => {
     // globals
     const log = console.log,

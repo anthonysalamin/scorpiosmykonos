@@ -2,6 +2,7 @@
  * 🟢 SCORPIOS | ion range slider V.1
  * build: 31.07.2020 22:18 | anthonysalamin.ch
  */
+console.log("ion range slider V.1 loaded");
 // 🍉 plural management
 function plural(a) {
   return a <= 1 ? `${a} Guest` : `${a} Guests`;
