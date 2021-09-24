@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const max = new Date(
     date.setUTCFullYear(seasonEnd.year, seasonEnd.month - 1, seasonEnd.day)
   );
-  log(max);
+  // log(max);
 
   const object = {
       // if today's date is more recent than the season's start...

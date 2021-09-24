@@ -1,9 +1,8 @@
 /*
- * Responsive Navigation System V.0
- * note: not implemented yet
- * Build date: 16/07/2020 | anthonysalamin.ch
+ * 🟠 SCORPIOS | navigation system V.51
+ * build: 16.07.2020 11:34 | anthonysalamin.ch
  */
-console.log("Responsive Navigation System V.0 loaded");
+console.log("navigation system V.51 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,
@@ -56,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
           return "mobile";
         } // end if
       })(); // end device variable
-      log(`🟢 Device type is ${device}`);
+      log(device);
     } // end deviceSize()
     deviceSize();
 
@@ -148,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         })
       );
-    } catch (err) { }
+    } catch (err) {}
     let wheelOpt = supportsPassive ? { passive: false } : false;
     let wheelEvent =
       "onwheel" in document.createElement("div") ? "wheel" : "mousewheel";
@@ -269,13 +268,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // define if menu is open or not
       menu = (() => {
         if (wrapper.classList[1] == "invert") {
-          log("🟢 Overlay menu opened.");
+          log("overlay opened");
           if (device == "mobile") {
             disableScroll();
           }
           return true;
         } else {
-          log("🟢 overlay menu closed.");
+          log("overlay closed");
           if (device == "mobile") {
             enableScroll();
           }
@@ -283,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })(); // end menu variable
     });
-    // log(menu);
+    log(menu);
 
     // 🍓 check if scroll position is in range
     function inRange(position, min, max) {
@@ -300,13 +299,6 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.style.opacity = 1;
       } else if (!menu) {
         // 🍋 wrapper above limit on menu closed
-
-        // EXPERMINETAL ⚠️
-        if(trigger.position == "undefined") {
-          trigger.position = currentScrollpos;
-        }
-        // EXPERMINETAL ⚠️
-
         if (trigger.position < limit) {
           if (trigger.direction == "up") {
             // show wrapper on scroll up within limit
@@ -320,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
           trigger.direction == "up"
         ) {
           // 🍋 wrapper within limit on menu closed
-          log("🟢 Trigger up position is in range.");
+          log("trigger up position is in range");
           // show wrapper on scroll within limit
           logotype.style.fill = "white";
           Array.from(lines).forEach((line) => {

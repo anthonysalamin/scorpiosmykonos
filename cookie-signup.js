@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🧠 if no cookie found
   if (!Cookies.get(cookieName)) {
-    log("no Sign up 🍪 was found");
+    log("no Sign Up 🍪 was found.");
     // display popup after x amount of seconds
     setTimeout(() => {
       cookieWrapper.style.display = "flex";
       $(cookieWrapper).fadeTo(speed, 1, "linear");
-      log("Sign up 🍪 popup displayed");
+      log("Sign Up 🍪 popup displayed.");
     }, popupDelay * 1000);
 
     // close popup on click
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 🧠 create cookie on button click to expire on newly defined date
     popupButtons.forEach((popupButton) => {
       popupButton.addEventListener("click", () => {
-        log("Sign up 🍪 created and stored");
+        log("Sign Up 🍪 created and stored.");
         Cookies.set(cookieName, cookieValue, {
           expires: date
         }); // end set cookie
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }); // end forEach
   } else {
     log(
-      `Yay, 🍪 ${cookieName} "${cookieValue}" has been found, popup remains hidden.`
+      `🍪 ${cookieName} "${cookieValue}" has been found, popup remains hidden.`
     );
   } // end if
 }); // end DOMloaded
