@@ -1,8 +1,8 @@
 /*
- * 🟢 SCORPIOS | date picker V.14
- * Last build: 09/09/2021 14:10 | anthonysalamin.ch
+ * 🟡 SCORPIOS | date picker V.15
+ * Last build: 25/10/2021 00:10 | anthonysalamin.ch
  */
-console.log("date-picker V.14 loaded");
+console.log("date-picker V.15 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,
@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   const max = new Date(
-    date.setUTCFullYear(seasonEnd.year, seasonEnd.month - 1, seasonEnd.day)
+    date.setUTCFullYear(seasonEnd.year, seasonEnd.month - 1, seasonEnd.day - 1)
   );
-  // log(max);
+  log(max);
 
   const object = {
       // if today's date is more recent than the season's start...
@@ -99,6 +99,24 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
           instance.show();
           month();
+
+          // disable SET button if season has ended
+          function disableSETbutton() {
+            const button = document.querySelector(
+              ".mbsc-fr-btn1.mbsc-fr-btn-e.mbsc-fr-btn"
+            );
+            button.style.pointerEvents = "none";
+            button.textContent = "END";
+            log(button);
+          } // end disableSETbutton()
+
+          setTimeout(() => {
+            log(`today: ${Date.parse(today)} seasonend: ${Date.parse(max)}`);
+            Date.parse(today) > Date.parse(max) && seasonHasAnEnd
+              ? disableSETbutton()
+              : log("season not over");
+          }, 150);
+          // end disable SET BUTTON
         },
         false
       ); // end listener
