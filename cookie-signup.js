@@ -1,12 +1,12 @@
 /*
- * 🟢 SCORPIOS | cookie sign up V.1
+ * 🟢 SCORPIOS | cookie signup V.1
  * last build: 26.10.2021 18:35 | anthonysalamin.ch
  */
 console.log("cookie sign up V.1 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,
-    cookieName = "Scorpios Subscriptions",
+    cookieName = "Scorpios_Signup_2022",
     cookieValue = "Yes",
     popupDelay = 8, // delay in seconds after which the popup appears
     dayStored = 365, // days during which the cookie is stored in user's browser

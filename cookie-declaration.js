@@ -5,7 +5,7 @@
 console.log("cookie declaration V.1 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // options
-  const cookieName = "Scorpios Mykonos Cookie Declaration",
+  const cookieName = "Scorpios_Cookie_Declaration",
     cookieValue = "Accepted",
     popupDelay = 1, // delay in seconds after which the popup appears
     dayStored = 365, // days during which the cookie is stored in user's browser
