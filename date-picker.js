@@ -1,6 +1,6 @@
 /*
  * 🟡 SCORPIOS | date picker V.15
- * Last build: 25/10/2021 00:10 | anthonysalamin.ch
+ * Last build: 26/10/2021 18:50 | anthonysalamin.ch
  */
 console.log("date-picker V.15 loaded");
 document.addEventListener("DOMContentLoaded", () => {
@@ -96,30 +96,38 @@ document.addEventListener("DOMContentLoaded", () => {
       // 🍍 on click trigger date picker
       calendar.addEventListener(
         "click",
-        () => {
-          instance.show();
-          month();
+        function () {
+          if (Date.parse(today) > Date.parse(max) && seasonHasAnEnd) {
+            // disable calendar input
+            calendar.disabled = true;
+            calendar.placeholder = "Season has ended.";
+          } else {
+            // show calendar
+            instance.show();
+            month();
+            /*
+            // disable SET button if season has ended
+            function disableSETbutton() {
+              const button = document.querySelector(
+                ".mbsc-fr-btn1.mbsc-fr-btn-e.mbsc-fr-btn"
+              );
+              button.style.pointerEvents = "none";
+              button.textContent = "END";
+              log(button);
+            } // end disableSETbutton()
 
-          // disable SET button if season has ended
-          function disableSETbutton() {
-            const button = document.querySelector(
-              ".mbsc-fr-btn1.mbsc-fr-btn-e.mbsc-fr-btn"
-            );
-            button.style.pointerEvents = "none";
-            button.textContent = "END";
-            log(button);
-          } // end disableSETbutton()
-
-          setTimeout(() => {
-            log(`today: ${Date.parse(today)} seasonend: ${Date.parse(max)}`);
-            Date.parse(today) > Date.parse(max) && seasonHasAnEnd
-              ? disableSETbutton()
-              : log("season not over");
-          }, 150);
-          // end disable SET BUTTON
+            setTimeout(() => {
+              log(`today: ${Date.parse(today)} seasonend: ${Date.parse(max)}`);
+              Date.parse(today) > Date.parse(max) && seasonHasAnEnd
+                ? disableSETbutton()
+                : log("season not over yet");
+            }, 150);
+            // end disable SET BUTTON
+            */
+          } // end if
         },
         false
-      ); // end listener
+      ); // end click listener
     }); // end for each form
   } // end datePickerInit()
 }); // end DOM listener
