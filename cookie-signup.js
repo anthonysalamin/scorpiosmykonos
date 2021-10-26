@@ -1,12 +1,12 @@
 /*
  * 🟢 SCORPIOS | cookie sign up V.1
- * build: 02.07.2020 21:55 | anthonysalamin.ch
+ * last build: 26.10.2021 18:35 | anthonysalamin.ch
  */
 console.log("cookie sign up V.1 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,
-    cookieName = "Scorpios Mykonos Sign Up",
+    cookieName = "Scorpios Subscriptions",
     cookieValue = "Yes",
     popupDelay = 8, // delay in seconds after which the popup appears
     dayStored = 365, // days during which the cookie is stored in user's browser
@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🧠 if no cookie found
   if (!Cookies.get(cookieName)) {
-    log("no Sign Up 🍪 was found.");
+    log("no Subscriptions 🍪 was found.");
     // display popup after x amount of seconds
     setTimeout(() => {
       cookieWrapper.style.display = "flex";
       $(cookieWrapper).fadeTo(speed, 1, "linear");
-      log("Sign Up 🍪 popup displayed.");
+      log("Subscriptions 🍪 popup displayed.");
     }, popupDelay * 1000);
 
     // close popup on click
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 🧠 create cookie on button click to expire on newly defined date
     popupButtons.forEach((popupButton) => {
       popupButton.addEventListener("click", () => {
-        log("Sign Up 🍪 created and stored.");
+        log("Subscriptions 🍪 created and stored.");
         Cookies.set(cookieName, cookieValue, {
           expires: date
         }); // end set cookie
