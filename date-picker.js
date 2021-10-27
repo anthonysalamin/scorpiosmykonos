@@ -1,8 +1,7 @@
 /*
  * 🟡 SCORPIOS | date picker V.15
- * Last build: 26/10/2021 18:50 | anthonysalamin.ch
+ * build: 27.10.2021 22:30 | anthonysalamin.ch
  */
-console.log("date-picker V.15 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,
@@ -130,4 +129,5 @@ document.addEventListener("DOMContentLoaded", () => {
       ); // end click listener
     }); // end for each form
   } // end datePickerInit()
+  log(`loaded: date-picker V.15 | last cached: ${new Date()}`);
 }); // end DOM listener
