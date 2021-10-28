@@ -1,9 +1,11 @@
 /*
  * 🟢 SCORPIOS | email validation V.2
- * Build: 30.08.2021 18:00 | anthonysalamin.ch
-*/
-console.log("email-validation.js V.2 loaded");
+ * build: 30.08.2021 18:00 | anthonysalamin.ch
+ */
 document.addEventListener("DOMContentLoaded", () => {
+  console.log(
+    "loaded: email-validation.js V.2 loaded | build: 30.08.2021 18:00"
+  );
   // globals
   const log = console.log,
     forms = new Set(document.getElementsByClassName("form-block")),
@@ -74,18 +76,34 @@ document.addEventListener("DOMContentLoaded", () => {
             if (arobase) {
               if (extension) {
                 checkInput.style.color = colorValid;
-                return "seems legit";
+                console.log(`%c success:`, `color: green`, `email seems legit`);
+                return "email seems legit";
               } else {
                 checkInput.style.color = colorInvalid;
-                return "not yet valid";
+                console.log(
+                  `%c warning:`,
+                  `color: orange`,
+                  `email not yet valid`
+                );
+                return "email not yet valid";
               } // end if extension
             } else {
               checkInput.style.color = colorInvalid;
-              return 'seems "@" is missing';
+              return 'email missing "@" symbol';
+              console.log(
+                `%c warning:`,
+                `color: orange`,
+                `email missing "@" symbol`
+              );
             } // end if arobase
           } else {
             checkInput.style.color = colorInvalid;
-            return "oops, a valid email is needed";
+            console.log(
+              `%c error:`,
+              `color: error`,
+              `email invalid, try again`
+            );
+            return "email invalid, try again";
           } // end if value > 1
         })();
 
@@ -94,4 +112,4 @@ document.addEventListener("DOMContentLoaded", () => {
       emailInput.addEventListener("keyup", debounce(emailValidation, speed));
     }); // end for each form
   } // end emailCheck()
-});
+}); // end DOM loaded

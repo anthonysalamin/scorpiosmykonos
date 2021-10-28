@@ -2,9 +2,11 @@
  * 🟢 SCORPIOS | phone intlTelInput validation V.4
  * build 02.08.2020 22:47 | anthonysalamin.ch
  */
-console.log("phone intlTelInput validation V.4 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   girlGimmeYourNumber();
+  console.log(
+    "loaded: phone intlTelInput validation V.4 | build: 02.08.2020 22:47"
+  );
 });
 
 function girlGimmeYourNumber() {
@@ -42,7 +44,7 @@ function girlGimmeYourNumber() {
       // onlyCountries: [],
       // excludeCountries: [],
       preferredCountries: ["de", "us", "gr"],
-      initialCountry: "gr", // "auto"
+      initialCountry: "gr" // "auto"
       /*
       geoIpLookup: (callback) => {
         fetch(`https://ipinfo.io?token=${token}`)
@@ -71,15 +73,21 @@ function girlGimmeYourNumber() {
 
       // 🧠 check if number is valid
       if (validity == true) {
-        log(`🍀 Yay, your number ${number} seems legit`);
+        console.log(
+          `%c success:`,
+          `color: green`,
+          `your number ${number} seems legit`
+        );
         // input.value = number; // inject full number with national code
         info.innerHTML = `seems legit`;
         info.style.color = colorValid;
         // else if number is not valid
       } else {
-        log(
-          `😡 Oops, your number ${number} seems ${
-          validity ? "legit" : "invalid"
+        console.log(
+          `%c warning:`,
+          `color: orange`,
+          `your number ${number} seems ${
+            validity ? "legit" : "invalid"
           }, please try again.`
         );
 
