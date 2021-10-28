@@ -3,14 +3,15 @@
  * build: 28.10.2021 23:13 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
+  // options
+  const scriptVersion = 15,
+    seasonStart = { day: 23, month: 5, year: new Date().getFullYear() },
+    seasonEnd = { day: 3, month: 10, year: new Date().getFullYear() },
+    daysLimit = 30,
+    seasonHasAnEnd = true;
+
   // globals
   const log = console.log,
-    version = 15, // script version
-    currentYear = new Date().getFullYear(),
-    seasonStart = { day: 23, month: 5, year: currentYear },
-    seasonEnd = { day: 3, month: 10, year: currentYear },
-    daysLimit = 30, // limit reservation timeframe (30 = 1 month)
-    seasonHasAnEnd = true,
     forms = document.getElementsByClassName("form-block"),
     monthIds = [
       "January",
@@ -159,5 +160,5 @@ document.addEventListener("DOMContentLoaded", () => {
   datePickerInit();
 
   // last sync
-  log(`loaded: date-picker V.${version} | build: 28.10.2021 23:13`);
+  log(`loaded: date-picker V.${scriptVersion} | build: 28.10.2021 23:13`);
 }); // end DOM listener
