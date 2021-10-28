@@ -5,6 +5,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // globals
   const log = console.log,
+    version = 15, // script version
     currentYear = new Date().getFullYear(),
     seasonStart = { day: 23, month: 5, year: currentYear },
     seasonEnd = { day: 3, month: 10, year: currentYear },
@@ -42,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const max = new Date(
     date.setUTCFullYear(seasonEnd.year, seasonEnd.month - 1, seasonEnd.day - 1)
   );
-  log(max);
 
   const object = {
       // if today's date is more recent than the season's start...
@@ -151,6 +151,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // inits
   datePickerInit();
 
-  // logging
-  log(`loaded: date-picker V.15 | last cached: ${new Date()}`);
+  // last sync
+  const berlin = new Date();
+  function lastSync(day, month, year, hour, minute) {
+    log(
+      `loaded: date-picker V.${version} | Last sync: ${day}.${month}.${year} @ ${hour}:${minute}`
+    );
+  }
+  lastSync(
+    berlin.getUTCDate(),
+    berlin.getUTCMonth() + 1,
+    berlin.getUTCFullYear(),
+    berlin.getUTCHours() + 2,
+    berlin.getUTCMinutes()
+  );
+  // end last sync
 }); // end DOM listener
