@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     today = new Date(date.setDate(date.getDate())),
     future = new Date(date.setDate(date.getDate() + daysLimit)); // x days in the future
 
-  // min date
   const min = new Date(
     date.setUTCFullYear(
       seasonStart.year,
@@ -130,25 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
             // show calendar
             instance.show();
             month();
-            /*
-            // disable SET button if season has ended
-            function disableSETbutton() {
-              const button = document.querySelector(
-                ".mbsc-fr-btn1.mbsc-fr-btn-e.mbsc-fr-btn"
-              );
-              button.style.pointerEvents = "none";
-              button.textContent = "END";
-              log(button);
-            } // end disableSETbutton()
-
-            setTimeout(() => {
-              log(`today: ${Date.parse(today)} seasonend: ${Date.parse(max)}`);
-              Date.parse(today) > Date.parse(max) && seasonHasAnEnd
-                ? disableSETbutton()
-                : log("season not over yet");
-            }, 150);
-            // end disable SET BUTTON
-            */
           } // end if
         },
         false
