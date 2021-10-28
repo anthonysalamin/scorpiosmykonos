@@ -1,6 +1,6 @@
 /*
  * 🟡 SCORPIOS | date picker V.15
- * build: 27.10.2021 22:30 | anthonysalamin.ch
+ * build: 28.10.2021 22:15 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   // globals
@@ -61,9 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
       calendarSystem: "gregorian"
     };
 
-  // inits
-  datePickerInit();
-
   // 🍋 date picker management
   function datePickerInit() {
     Array.from(forms).forEach((form) => {
@@ -98,15 +95,14 @@ document.addEventListener("DOMContentLoaded", () => {
         function () {
           if (Date.parse(today) > Date.parse(max) && seasonHasAnEnd) {
             // define input disabled css
-            const inputDisabled = `
+            const inputDisabledStyle = `
               input:disabled {
-                color: red !important;
                 background-color: transparent !important;
                 border: none !important;
               }
               `;
 
-            // inject custom css
+            // inject custom css definition
             function injectStyle(css) {
               const head =
                   document.head || document.getElementsByTagName("head")[0],
@@ -115,11 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
               style.appendChild(document.createTextNode(css));
               head.appendChild(style);
             }
-            injectStyle(inputDisabled);
+            // inject custom css expression
+            injectStyle(inputDisabledStyle);
 
             // update placeholder and disable input
             calendar.placeholder = "Season has ended.";
             calendar.disabled = true;
+            calendar.style.cursor = "not-allowed";
           } else {
             // show calendar
             instance.show();
@@ -149,5 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ); // end click listener
     }); // end for each form
   } // end datePickerInit()
+
+  // inits
+  datePickerInit();
+
+  // logging
   log(`loaded: date-picker V.15 | last cached: ${new Date()}`);
 }); // end DOM listener
