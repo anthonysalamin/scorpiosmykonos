@@ -1,5 +1,6 @@
 /*
  * 🟡 SCORPIOS | date picker V.15
+ * dependencies: mobiscroll.js + moment.js
  * build: 28.10.2021 23:13 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
