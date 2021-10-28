@@ -1,6 +1,6 @@
 /*
  * 🟡 SCORPIOS | date picker V.15
- * build: 28.10.2021 15:15 | anthonysalamin.ch
+ * build: 27.10.2021 22:30 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   // globals
@@ -97,21 +97,27 @@ document.addEventListener("DOMContentLoaded", () => {
         "click",
         function () {
           if (Date.parse(today) > Date.parse(max) && seasonHasAnEnd) {
-            // change placeholder, update disable css and skip date picker instance
-            const cssInputDisabled = `
+            // define input disabled css
+            const inputDisabled = `
               input:disabled {
                 color: red !important;
                 background-color: transparent !important;
                 border: none !important;
               }
-              `,
-              head = document.head || document.getElementsByTagName("head")[0],
-              style = document.createElement("style");
+              `;
 
-            style.type = "text/css";
-            style.appendChild(document.createTextNode(cssInputDisabled));
-            head.appendChild(style);
+            // inject custom css
+            function injectStyle(css) {
+              const head =
+                  document.head || document.getElementsByTagName("head")[0],
+                style = document.createElement("style");
+              style.type = "text/css";
+              style.appendChild(document.createTextNode(css));
+              head.appendChild(style);
+            }
+            injectStyle(inputDisabled);
 
+            // update placeholder and disable input
             calendar.placeholder = "Season has ended.";
             calendar.disabled = true;
           } else {
