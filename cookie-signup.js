@@ -1,22 +1,21 @@
 /*
  * 🟢 SCORPIOS | cookie signup V.1
- * build: 26.10.2021 18:35 | anthonysalamin.ch
+ * build: 26.10.2021 @ 18:35 | anthonysalamin.ch
  */
-console.log("cookie sign up V.1 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   cookieSignup();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `cookie sign up V.1 | build: 26.10.2021 18:35`
+    `cookie signup V.1 | build: 26.10.2021 @ 18:35`
   ); // end logging
 }); // end DOMloaded
 
 function cookieSignup() {
   // globals
   const log = console.log,
-    cookieName = "Scorpios_Signup_2022",
-    cookieValue = "Seen",
+    cookieName = "SCORPIOS_SIGNUP_2022",
+    cookieValue = "AGREED",
     popupDelay = 8, // delay in seconds after which the popup appears
     dayStored = 365, // days during which the cookie is stored in user's browser
     speed = 250,
@@ -25,12 +24,12 @@ function cookieSignup() {
 
   // 🧠 if no cookie found
   if (!Cookies.get(cookieName)) {
-    log("no Subscriptions 🍪 was found.");
+    console.log(`%c warning:`, `color: orange`, `no signup 🍪 was found yet`); // end logging
     // display popup after x amount of seconds
     setTimeout(() => {
       cookieWrapper.style.display = "flex";
       $(cookieWrapper).fadeTo(speed, 1, "linear");
-      log("Subscriptions 🍪 popup displayed.");
+      console.log(`%c success:`, `color: green`, `signup 🍪 popup displayed`); // end logging
     }, popupDelay * 1000);
 
     // close popup on click
@@ -50,15 +49,17 @@ function cookieSignup() {
     // 🧠 create cookie on button click to expire on newly defined date
     popupButtons.forEach((popupButton) => {
       popupButton.addEventListener("click", () => {
-        log("Subscriptions 🍪 created and stored.");
+        console.log(`%c success:`, `color: green`, `signup 🍪 created and stored`); // end logging
         Cookies.set(cookieName, cookieValue, {
           expires: date
         }); // end set cookie
       }); // end listener
     }); // end forEach
   } else {
-    log(
-      `🍪 ${cookieName} "${cookieValue}" has been found, popup remains hidden.`
-    );
+    console.log(
+      `%c success:`,
+      `color: green`,
+      `"${cookieName}" 🍪 is "${cookieValue}", popup remains hidden`
+    ); // end logging
   } // end if
 } // end cookieSignup()

@@ -1,6 +1,6 @@
 /*
  * 🟢 SCORPIOS | cookie declaration V.1
- * build: 02.07.2020 21:59 | anthonysalamin.ch
+ * build: 02.07.2020 @ 21:59 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   cookieDeclaration();
@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function cookieDeclaration() {
   // options
-  const cookieName = "Scorpios_Cookie_Declaration",
-    cookieValue = "Accepted",
+  const cookieName = "SCORPIOS_COOKIE_DECLARATION",
+    cookieValue = "ACCEPTED",
     popupDelay = 1, // delay in seconds after which the popup appears
     dayStored = 365, // days during which the cookie is stored in user's browser
     speed = 500;
@@ -25,12 +25,12 @@ function cookieDeclaration() {
 
   // 🧠 if no cookie found
   if (!Cookies.get(cookieName)) {
-    log("no GDPR 🍪 was found");
+    console.log(`%c warning:`, `color: orange`, `no declaration 🍪 was found yet`); // end logging
     // display popup after x amount of seconds
     setTimeout(() => {
       gdprWrapper.style.display = "flex";
       $(gdprWrapper).fadeTo(speed, 1, "linear");
-      log("GDPR 🍪 popup displayed");
+      console.log(`%c success:`, `color: green`, `declaration 🍪 popup displayed`); // end logging
     }, popupDelay * 1000);
 
     // close popup on click
@@ -47,14 +47,20 @@ function cookieDeclaration() {
 
     // 🧠 create cookie on button click to expire on newly defined date
     popupButton.addEventListener("click", () => {
-      log("GDPR 🍪 created and stored");
+      console.log(
+        `%c success:`,
+        `color: green`,
+        `declaration 🍪 created and stored`
+      ); // end logging
       Cookies.set(cookieName, cookieValue, {
         expires: date
       }); // end set cookie
     }); // end listener
   } else {
-    log(
-      `🍪 ${cookieName} "${cookieValue}" has been found, popup remains hidden.`
-    );
+    console.log(
+      `%c success:`,
+      `color: green`,
+      `"${cookieName}" 🍪 is "${cookieValue}", popup remains hidden.`
+    ); // end logging
   } // end if
 } // end cookieDeclaration()
