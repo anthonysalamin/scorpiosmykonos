@@ -1,13 +1,13 @@
 /*
- * 🟢 SCORPIOS | soho member id V1
- * build: 29.03.2021 @ 16:30 |anthonysalamin.ch
+ * 🟢 SCORPIOS | soho member id
+ * V1 | 29.03.2021 @ 16:30 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   sohoMember();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `soho member id V1 | build: 29.03.2021 @ 16:30`
+    `V1 | 29.03.2021 @ 16:30 | soho member id`
   ); // end logging
 }); // end DOM loaded
 

@@ -1,13 +1,13 @@
 /*
- * 🟢 SCORPIOS | ion range slider V.1
- * build: 31.07.2020 @ 22:18 | anthonysalamin.ch
+ * 🟢 SCORPIOS | ion range slider
+ * V.1 | 31.07.2020 @ 22:18 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   ionRangeSliders();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `ion range slider V.1 | build: 31.07.2020 @ 22:18`
+    `V.1 | 31.07.2020 @ 22:18 | ion range slider`
   ); // end logging
 }); // end DOM loaded
 

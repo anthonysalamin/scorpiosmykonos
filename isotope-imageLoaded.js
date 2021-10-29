@@ -1,13 +1,13 @@
 /*
- * 🟠 SCORPIOS | Isotope + imagesLoaded V.1
- * build 11.07.2020 @ 12:12 | anthonysalamin.ch
+ * 🟠 SCORPIOS | Isotope + imagesLoaded
+ * V.1 | 11.07.2020 @ 12:12 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   injectIsotopeScripts();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `Isotope + imagesLoaded V.1 | build 11.07.2020 @ 12:12`
+    `V.1 | 11.07.2020 @ 12:12 | Isotope + imagesLoaded`
   ); // end logging
 }); // end DOM loaded
 

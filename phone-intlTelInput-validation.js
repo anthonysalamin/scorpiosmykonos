@@ -1,13 +1,13 @@
 /*
- * 🟢 SCORPIOS | phone intlTelInput validation V.4
- * build 02.08.2020 22:47 | anthonysalamin.ch
+ * 🟢 SCORPIOS | phone intlTelInput validation
+ * V.4 | 02.08.2020 @ 22:47 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   girlGimmeYourNumber();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `phone intlTelInput validation V.4 | build: 02.08.2020 22:47`
+    `V.4 | 02.08.2020 @ 22:47 | phone intlTelInput validation`
   ); // end logging
 }); // end DOM loaded
 

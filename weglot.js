@@ -1,11 +1,11 @@
-/* 🔴 SCORPIOS | weglot multilanguage V.1
- * build: 26.06.2020 @ 22:11 | anthonysalamin.ch
+/* 🔴 SCORPIOS | weglot multilanguage
+ * V.1 | 26.06.2020 @ 22:11 | anthonysalamin.ch
  * status: issue with weglot API key
  */
 console.log(
   `%c loaded:`,
   `color: green`,
-  `weglot multilanguage V.1 | build: 26.06.2020 @ 22:11`
+  `V.1 | 26.06.2020 @ 22:11 | weglot multilanguage`
 ); // end logging
 
 Weglot.initialize({ api_key: "wg_0d48bebd939d455579cfc61d3ab2fb353" }),

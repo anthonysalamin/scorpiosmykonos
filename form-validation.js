@@ -1,13 +1,13 @@
 /*
- * 🟢 SCORPIOS | form validation V.6
- * build: 29.10.2021 00:56 | anthonysalamin.ch
+ * 🟢 SCORPIOS | form validation
+ * V.6 | 29.10.2021 @ 00:56 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   requiredCheck();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `form validation V.6 | build: 29.10.2021 00:56`
+    `V.6 | 29.10.2021 @ 00:56 | form validation`
   ); // end logging
 }); // end DOM loaded
 
@@ -58,19 +58,19 @@ function requiredCheck() {
 
       // debug only
       console.log(
-        `%c error, required inputs:`,
+        `%c error:`,
         `color: red`,
-        `${requiredInputs.length}`
+        `required inputs: ${requiredInputs.length}`
       );
       console.log(
-        `%c warning, required filled inputs:`,
+        `%c warning:`,
         `color: orange`,
-        `${requiredFilledInputs.length}`
+        `required filled inputs: ${requiredFilledInputs.length}`
       );
       console.log(
-        `%c warning, required empty inputs:`,
+        `%c warning:`,
         `color: orange`,
-        `${emptyInputs.length}`
+        `required empty inputs: ${emptyInputs.length}`
       );
     } // end inputsManagement
 
@@ -78,7 +78,11 @@ function requiredCheck() {
       inputsManagement();
 
       if (requiredInputs.length == requiredFilledInputs.length) {
-        log("Yay, all required fields filled, sending form");
+        console.log(
+          `%c success:`,
+          `color: green`,
+          `all required fields filled, sending form`
+        );
       } else {
         const message = inputNames.toString().replace(/,/g, ", "),
           plural = emptyInputs.length > 1 ? "s" : "";

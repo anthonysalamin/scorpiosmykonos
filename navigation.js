@@ -1,13 +1,13 @@
 /*
- * 🟠 SCORPIOS | navigation system V.51
- * build: 16.07.2020 @ 11:34 | anthonysalamin.ch
+ * 🟠 SCORPIOS | navigation system
+ * V.51 | 16.07.2020 @ 11:34 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   navigationSystem();
   console.log(
     `%c loaded:`,
     `color: green`,
-    ` navigation system V.51 | build: 16.07.2020 @ 11:34`
+    `V.51 | 16.07.2020 @ 11:34 |navigation system`
   ); // end logging
 }); // end DOM loaded
 

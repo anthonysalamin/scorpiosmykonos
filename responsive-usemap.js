@@ -1,6 +1,6 @@
 /*
- * 🟢 SCORPIOS | usemap V.1
- * build 03.07.2020 @ 11:37 | anthonysalamin.ch
+ * 🟢 SCORPIOS | usemap
+ * V.1 | 03.07.2020 @ 11:37 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   createAreas();
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(
     `%c loaded:`,
     `color: green`,
-    `usemap V.1 | build 03.07.2020 @ 11:37`
+    `V.1 | 03.07.2020 @ 11:37 | usemap`
   ); // end logging
 });
 

@@ -1,6 +1,6 @@
 /*
- * 🟢 SCORPIOS | scroll-based logo visibility V.1
- * build: 01.08.2020 @ 21:47 | anthonysalamin.ch
+ * 🟢 SCORPIOS | scroll-based logo visibility
+ * V.1 | 01.08.2020 @ 21:47 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   // 🥥 run triggerMe on scroll every x milliseconds
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(
     `%c loaded:`,
     `color: green`,
-    `scroll-based logo visibility V.1 | build: 01.08.2020 @ 21:47`
+    `V.1 | 01.08.2020 @ 21:47 | scroll-based logo visibility`
   ); // end logging
 }); // end DOMContentLoaded()
 

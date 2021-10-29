@@ -1,13 +1,13 @@
 /*
- * 🟢 SCORPIOS | email validation V.2
- * build: 30.08.2021 18:00 | anthonysalamin.ch
+ * 🟢 SCORPIOS | email validation
+ * V.2 | 30.08.2021 @ 18:00 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   emailCheck();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `email validation V.2 | build: 30.08.2021 18:00`
+    `V.2 | 30.08.2021 @ 18:00 | email validation`
   ); // end logging
 }); // end DOM loaded
 
@@ -100,7 +100,7 @@ function emailCheck() {
           } // end if arobase
         } else {
           checkInput.style.color = colorInvalid;
-          console.log(`%c error:`, `color: error`, `email invalid, try again`);
+          console.log(`%c error:`, `color: red`, `email invalid, try again`);
           return "email invalid, try again";
         } // end if value > 1
       })();

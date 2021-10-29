@@ -1,13 +1,13 @@
 /*
- * 🟢 SCORPIOS | FormBackend AJAX request V.6
- * build: 18.07.2020 @ 22:40 | anthonysalamin.ch
+ * 🟢 SCORPIOS | FormBackend AJAX request
+ * V.6 | 18.07.2020 @ 22:40 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   ajaxMe();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `FormBackend AJAX request V.6 | build: 18.07.2020 @ 22:40`
+    `V.6 | 18.07.2020 @ 22:40 | FormBackend AJAX request`
   ); // end logging
 });
 

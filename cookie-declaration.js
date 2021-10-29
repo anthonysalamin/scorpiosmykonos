@@ -1,13 +1,13 @@
 /*
- * 🟢 SCORPIOS | cookie declaration V.1
- * build: 02.07.2020 @ 21:59 | anthonysalamin.ch
+ * 🟢 SCORPIOS | cookie declaration
+ * V.1 | 02.07.2020 @ 21:59 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   cookieDeclaration();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `cookie declaration V.1 | build: 02.07.2020 21:59`
+    `V.1 | 02.07.2020 @ 21:59 | cookie declaration`
   ); // end logging
 }); // end DOMloaded
 

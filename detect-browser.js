@@ -1,14 +1,14 @@
 /*
- * 🟢 SCORPIOS | browser detection V.1
+ * 🟢 SCORPIOS | browser detection
  * detect msie and redirect to Chrome download page
- * build: 17.09.2021 21:39 | anthonysalamin.ch
+ * V.1 | 17.09.2021 @ 21:39 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", function () {
   searchAndDestroy();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `browser detection V.1 | build: 17.09.2021 21:39`
+    `V.1 | 17.09.2021 @ 21:39 | browser detection`
   ); // end logging
 });
 

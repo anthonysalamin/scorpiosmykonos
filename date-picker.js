@@ -1,23 +1,23 @@
 /*
- * 🟡 SCORPIOS | date picker V.15
+ * 🟡 SCORPIOS | date picker
  * dependencies: mobiscroll.js + moment.js
- * build: 28.10.2021 23:13 | anthonysalamin.ch
+ * V.15 | 28.10.2021 @ 23:13 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   datePicker();
   console.log(
     `%c loaded:`,
     `color: green`,
-    `date picker V.15 | build: 28.10.2021 23:13`
+    `V.15 | 28.10.2021 @ 23:13 | date picker`
   ); // end logging
 }); // end DOM listener
 
 function datePicker() {
   // options
-  const seasonStart = { day: 23, month: 5, year: new Date().getFullYear() },
+  const seasonHasAnEnd = true,
+    seasonStart = { day: 23, month: 5, year: new Date().getFullYear() },
     seasonEnd = { day: 3, month: 10, year: new Date().getFullYear() },
-    daysLimit = 30,
-    seasonHasAnEnd = true;
+    daysLimit = 30;
 
   // globals
   const log = console.log,
