@@ -2,8 +2,16 @@
  * 🟢 SCORPIOS | cookie declaration V.1
  * build: 02.07.2020 21:59 | anthonysalamin.ch
  */
-console.log("cookie declaration V.1 loaded");
 document.addEventListener("DOMContentLoaded", () => {
+  cookieDeclaration();
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `cookie declaration V.1 | build: 02.07.2020 21:59`
+  ); // end logging
+}); // end DOMloaded
+
+function cookieDeclaration() {
   // options
   const cookieName = "Scorpios_Cookie_Declaration",
     cookieValue = "Accepted",
@@ -49,4 +57,4 @@ document.addEventListener("DOMContentLoaded", () => {
       `🍪 ${cookieName} "${cookieValue}" has been found, popup remains hidden.`
     );
   } // end if
-}); // end DOMloaded
+} // end cookieDeclaration()

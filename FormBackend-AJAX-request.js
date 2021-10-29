@@ -1,10 +1,14 @@
 /*
  * 🟢 SCORPIOS | FormBackend AJAX request V.6
- * build: 18.07.2020 22:40 | anthonysalamin.ch
+ * build: 18.07.2020 @ 22:40 | anthonysalamin.ch
  */
-console.log("FormBackend AJAX request V.6 loaded");
 document.addEventListener("DOMContentLoaded", () => {
   ajaxMe();
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `FormBackend AJAX request V.6 | build: 18.07.2020 @ 22:40`
+  ); // end logging
 });
 
 function ajaxMe() {
@@ -32,8 +36,12 @@ function ajaxMe() {
       function success() {
         const response = JSON.parse(request.response),
           name = response.values.name;
-        log(`readyState: ${request.readyState}, status: ${request.status}`);
-        log(`server response: ${name}`);
+        console.log(
+          `%c readyState:`,
+          `color: blue`,
+          `${request.readyState}, status: ${request.status}`
+        );
+        console.log(`%c server response:`, `color: blue`, `${name}`);
         setTimeout(() => {
           window.location.href = `https://www.${domain}/${subpage}?name=${name}`;
         }, delay);
@@ -42,7 +50,12 @@ function ajaxMe() {
       // 😡 on error
       function error(err) {
         alert(`Oops, something went wrong: ${err}`);
-      }
+        console.log(
+          `%c error:`,
+          `color: red`,
+          `Oops, something went wrong: ${err}`
+        );
+      } // end error()
 
       request.onload = success;
       request.onerror = error;

@@ -4,9 +4,17 @@
  * build: 28.10.2021 23:13 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
+  datePicker();
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `date picker V.15 | build: 28.10.2021 23:13`
+  ); // end logging
+}); // end DOM listener
+
+function datePicker() {
   // options
-  const scriptVersion = 15,
-    seasonStart = { day: 23, month: 5, year: new Date().getFullYear() },
+  const seasonStart = { day: 23, month: 5, year: new Date().getFullYear() },
     seasonEnd = { day: 3, month: 10, year: new Date().getFullYear() },
     daysLimit = 30,
     seasonHasAnEnd = true;
@@ -63,40 +71,39 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
   // 🍋 date picker management
-  function datePickerInit() {
-    Array.from(forms).forEach((form) => {
-      const calendar = form.querySelector(".mobiscroll-calendar"),
-        button = form.querySelector(".mobiscroll-button"),
-        hiddenMonth = form.querySelector('input[name="month"]'),
-        formatDate = form.querySelector(".format");
+  Array.from(forms).forEach((form) => {
+    const calendar = form.querySelector(".mobiscroll-calendar"),
+      button = form.querySelector(".mobiscroll-button"),
+      hiddenMonth = form.querySelector('input[name="month"]'),
+      formatDate = form.querySelector(".format");
 
-      // 🍇 settings + instance
-      mobiscroll.settings = settings;
-      const instance = mobiscroll.calendar(calendar, object);
+    // 🍇 settings + instance
+    mobiscroll.settings = settings;
+    const instance = mobiscroll.calendar(calendar, object);
 
-      // 🍓 month injection
-      function month() {
-        // when date field value change, update hidden field
-        calendar.addEventListener("change", () => {
-          const dateSelected = calendar.value, // DD/MM/YYYY
-            valueMonth = dateSelected.split("/")[1];
-          hiddenMonth.value = monthIds[valueMonth - 1]; // zero indexed handling
+    // 🍓 month injection
+    function month() {
+      // when date field value change, update hidden field
+      calendar.addEventListener("change", () => {
+        const dateSelected = calendar.value, // DD/MM/YYYY
+          valueMonth = dateSelected.split("/")[1];
+        hiddenMonth.value = monthIds[valueMonth - 1]; // zero indexed handling
 
-          // format date with moment.js
-          const momentFormat = moment(dateSelected, "DD/MM/YYYY").format(
-            "dddd, Do of MMMM" // 🎂 Friday, 24th of July
-          );
-          formatDate.textContent = momentFormat;
-        }); // end change listener
-      } // end month()
+        // format date with moment.js
+        const momentFormat = moment(dateSelected, "DD/MM/YYYY").format(
+          "dddd, Do of MMMM" // 🎂 Friday, 24th of July
+        );
+        formatDate.textContent = momentFormat;
+      }); // end change listener
+    } // end month()
 
-      // 🍍 on click trigger date picker
-      calendar.addEventListener(
-        "click",
-        function () {
-          if (Date.parse(today) > Date.parse(max) && seasonHasAnEnd) {
-            // define input disabled css
-            const inputDisabledStyle = `
+    // 🍍 on click trigger date picker
+    calendar.addEventListener(
+      "click",
+      function () {
+        if (Date.parse(today) > Date.parse(max) && seasonHasAnEnd) {
+          // define input disabled css
+          const inputDisabledStyle = `
               input:disabled {
                 background-color: transparent !important;
                 border-top: none !important;
@@ -110,36 +117,29 @@ document.addEventListener("DOMContentLoaded", () => {
               }
               `;
 
-            // inject custom css definition
-            function injectStyle(css) {
-              const head =
-                  document.head || document.getElementsByTagName("head")[0],
-                style = document.createElement("style");
-              style.type = "text/css";
-              style.appendChild(document.createTextNode(css));
-              head.appendChild(style);
-            }
-            // inject custom css expression
-            injectStyle(inputDisabledStyle);
+          // inject custom css definition
+          function injectStyle(css) {
+            const head =
+                document.head || document.getElementsByTagName("head")[0],
+              style = document.createElement("style");
+            style.type = "text/css";
+            style.appendChild(document.createTextNode(css));
+            head.appendChild(style);
+          }
+          // inject custom css expression
+          injectStyle(inputDisabledStyle);
 
-            // update placeholder and disable input
-            calendar.placeholder = "Season has ended.";
-            calendar.disabled = true;
-            calendar.style.cursor = "not-allowed";
-          } else {
-            // show calendar
-            instance.show();
-            month();
-          } // end if
-        },
-        false
-      ); // end click listener
-    }); // end for each form
-  } // end datePickerInit()
-
-  // inits
-  datePickerInit();
-
-  // last sync
-  log(`loaded: date-picker V.${scriptVersion} | build: 28.10.2021 23:13`);
-}); // end DOM listener
+          // update placeholder and disable input
+          calendar.placeholder = "Season has ended.";
+          calendar.disabled = true;
+          calendar.style.cursor = "not-allowed";
+        } else {
+          // show calendar
+          instance.show();
+          month();
+        } // end if
+      },
+      false
+    ); // end click listener
+  }); // end for each form
+} // end datePicker()

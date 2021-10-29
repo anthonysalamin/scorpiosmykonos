@@ -5,9 +5,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   girlGimmeYourNumber();
   console.log(
-    "loaded: phone intlTelInput validation V.4 | build: 02.08.2020 22:47"
-  );
-});
+    `%c loaded:`,
+    `color: green`,
+    `phone intlTelInput validation V.4 | build: 02.08.2020 22:47`
+  ); // end logging
+}); // end DOM loaded
 
 function girlGimmeYourNumber() {
   // globals

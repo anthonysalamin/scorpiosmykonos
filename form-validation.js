@@ -1,11 +1,15 @@
 /*
- * 🟢 SCORPIOS  | form validation V.6 
+ * 🟢 SCORPIOS | form validation V.6
  * build: 29.10.2021 00:56 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
   requiredCheck();
-  console.log("loaded: form validation V.6 | build: 29.10.2021 00:56");
-});
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `form validation V.6 | build: 29.10.2021 00:56`
+  ); // end logging
+}); // end DOM loaded
 
 function requiredCheck() {
   // globals
@@ -53,9 +57,21 @@ function requiredCheck() {
       });
 
       // debug only
-      console.log(`%c error, required inputs:`, `color: red`, `${requiredInputs.length}`);
-      console.log(`%c warning, required filled inputs:`, `color: orange`, `${requiredFilledInputs.length}`);
-      console.log(`%c warning, required empty inputs:`, `color: orange`, `${emptyInputs.length}`);
+      console.log(
+        `%c error, required inputs:`,
+        `color: red`,
+        `${requiredInputs.length}`
+      );
+      console.log(
+        `%c warning, required filled inputs:`,
+        `color: orange`,
+        `${requiredFilledInputs.length}`
+      );
+      console.log(
+        `%c warning, required empty inputs:`,
+        `color: orange`,
+        `${emptyInputs.length}`
+      );
     } // end inputsManagement
 
     submit.addEventListener("click", () => {

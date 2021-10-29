@@ -1,9 +1,17 @@
 /*
  * 🟠 SCORPIOS | navigation system V.51
- * build: 16.07.2020 11:34 | anthonysalamin.ch
+ * build: 16.07.2020 @ 11:34 | anthonysalamin.ch
  */
-console.log("navigation system V.51 loaded");
 document.addEventListener("DOMContentLoaded", () => {
+  navigationSystem();
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    ` navigation system V.51 | build: 16.07.2020 @ 11:34`
+  ); // end logging
+}); // end DOM loaded
+
+function navigationSystem() {
   // globals
   const log = console.log,
     scrollBar = document.scrollingElement,
@@ -355,6 +363,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }); // end scroll listener
   } // end moveUpAndDown()
   moveUpAndDown();
-}); // end DOMContentLoaded
-
-// go get an 🍦
+} // end navigationSystem

@@ -1,9 +1,18 @@
 /*
  * 🟢 SCORPIOS | cookie signup V.1
- * last build: 26.10.2021 18:35 | anthonysalamin.ch
+ * build: 26.10.2021 18:35 | anthonysalamin.ch
  */
 console.log("cookie sign up V.1 loaded");
 document.addEventListener("DOMContentLoaded", () => {
+  cookieSignup();
+  console.log(
+    `%c loaded:`,
+    `color: green`,
+    `cookie sign up V.1 | build: 26.10.2021 18:35`
+  ); // end logging
+}); // end DOMloaded
+
+function cookieSignup() {
   // globals
   const log = console.log,
     cookieName = "Scorpios_Signup_2022",
@@ -52,4 +61,4 @@ document.addEventListener("DOMContentLoaded", () => {
       `🍪 ${cookieName} "${cookieValue}" has been found, popup remains hidden.`
     );
   } // end if
-}); // end DOMloaded
+} // end cookieSignup()
