@@ -1,5 +1,6 @@
 /*
  * 🟢 SCORPIOS | email validation
+ * to do: improve error feedback for email input fields
  * V.2 | 30.08.2021 @ 18:00 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
@@ -77,31 +78,31 @@ function emailCheck() {
         if (value.length >= 1) {
           if (arobase) {
             if (extension) {
-              checkInput.style.color = colorValid;
               console.log(`%c success:`, `color: green`, `email seems legit`);
-              return "email seems legit";
+              // checkInput.style.color = colorValid;
+              // return "email seems legit";
             } else {
-              checkInput.style.color = colorInvalid;
               console.log(
                 `%c warning:`,
                 `color: orange`,
                 `email not yet valid`
               );
-              return "email not yet valid";
+              // checkInput.style.color = colorInvalid;
+              // return "email not yet valid";
             } // end if extension
           } else {
-            checkInput.style.color = colorInvalid;
-            return 'email missing "@" symbol';
             console.log(
               `%c warning:`,
               `color: orange`,
               `email missing "@" symbol`
             );
+            // checkInput.style.color = colorInvalid;
+            // return 'email missing "@" symbol';
           } // end if arobase
         } else {
-          checkInput.style.color = colorInvalid;
           console.log(`%c error:`, `color: red`, `email invalid, try again`);
-          return "email invalid, try again";
+          // checkInput.style.color = colorInvalid;
+          // return "email invalid, try again";
         } // end if value > 1
       })();
 
