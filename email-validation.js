@@ -1,19 +1,17 @@
 /*
  * 🟢 SCORPIOS | email validation
- * to do: improve error feedback for email input fields
- * V.2 | 30.08.2021 @ 18:00 | anthonysalamin.ch
+ * TO DO: improve error feedback for email input fields
+ * V.2 | 31.10.2021 @ 10:58 | anthonysalamin.ch
  */
+
+// on DOM loaded
 document.addEventListener("DOMContentLoaded", () => {
-  emailCheck();
-  console.log(
-    `%c loaded:`,
-    `color: green`,
-    `V.2 | 30.08.2021 @ 18:00 | email validation`
-  ); // end logging
+  emailValidation();
+  prettyLog(`loaded`, `V.2 | 30.08.2021 @ 18:00 | email validation`);
 }); // end DOM loaded
 
-// 🍈 check mail
-function emailCheck() {
+// email validation
+function emailValidation() {
   // globals
   const log = console.log,
     forms = new Set(document.getElementsByClassName("form-block")),
@@ -39,7 +37,7 @@ function emailCheck() {
     const emailInput = form.querySelector("input[name=email]"),
       checkInput = form.querySelector(".check-email");
 
-    function emailValidation() {
+    function emailCheck() {
       value = emailInput.value;
 
       // 🥙 checks if arobase is present
@@ -78,36 +76,60 @@ function emailCheck() {
         if (value.length >= 1) {
           if (arobase) {
             if (extension) {
-              console.log(`%c success:`, `color: green`, `email seems legit`);
+              prettyLog(`success`, `email seems legit`);
               // checkInput.style.color = colorValid;
               // return "email seems legit";
             } else {
-              console.log(
-                `%c warning:`,
-                `color: orange`,
-                `email not yet valid`
-              );
+              prettyLog(`warning`, `email not yet valid`);
               // checkInput.style.color = colorInvalid;
               // return "email not yet valid";
             } // end if extension
           } else {
-            console.log(
-              `%c warning:`,
-              `color: orange`,
-              `email missing "@" symbol`
-            );
+            prettyLog(`warning`, `email missing "@" symbol`);
             // checkInput.style.color = colorInvalid;
             // return 'email missing "@" symbol';
           } // end if arobase
         } else {
-          console.log(`%c error:`, `color: red`, `email invalid, try again`);
+          prettyLog(`error`, `email invalid, try again`);
           // checkInput.style.color = colorInvalid;
           // return "email invalid, try again";
         } // end if value > 1
       })();
 
       checkInput.textContent = message;
-    } // end emailValidation
-    emailInput.addEventListener("keyup", debounce(emailValidation, speed));
+    } // end emailCheck()
+    emailInput.addEventListener("keyup", debounce(emailCheck, speed));
   }); // end for each form
-} // end emailCheck()
+} // end emailValidation()
+
+// log helper
+function prettyLog(status, message) {
+  let color;
+  switch (status) {
+    case "success":
+      color = "green";
+      break;
+    case "loaded":
+      color = "green";
+      break;
+    case "warning":
+      color = "orange";
+      break;
+    case "error":
+      color = "red";
+      break;
+    default:
+      color = "grey";
+  }
+  console.log(
+    `%c${status}`,
+    [
+      `background: ${color}`,
+      `border-radius: 0.5em`,
+      `color: white`,
+      `font-weight: bold`,
+      `padding: 2px 0.5em`
+    ].join(`;`),
+    message
+  );
+} // end prettyLog
