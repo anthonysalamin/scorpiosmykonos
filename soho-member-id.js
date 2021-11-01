@@ -4,11 +4,7 @@
  */
 document.addEventListener("DOMContentLoaded", () => {
   sohoMember();
-  console.log(
-    `%c loaded:`,
-    `color: green`,
-    `V1 | 29.03.2021 @ 16:30 | soho member id`
-  ); // end logging
+  prettyLog(`loaded`, `V.1 | 29.03.2021 @ 16:30 | soho member id`);
 }); // end DOM loaded
 
 function sohoMember() {
@@ -24,3 +20,38 @@ function sohoMember() {
     });
   });
 } // end sohoMember
+
+// log helper
+function prettyLog(status, message) {
+  let color;
+  switch (status) {
+      case "info":
+      color = "#4DD0E1";
+      break;
+    case "success":
+      color = "#1DE9B6";
+      break;
+    case "loaded":
+      color = "#1DE9B6";
+      break;
+    case "warning":
+      color = "#FFC107";
+      break;
+    case "error":
+      color = "#FF3D00";
+      break;
+    default:
+      color = "#90A4AE";
+  }
+  console.log(
+    `%c${status}`,
+    [
+      `background: ${color}`,
+      `border-radius: 0.5em`,
+      `color: white`,
+      `font-weight: bold`,
+      `padding: 2px 0.5em`
+    ].join(`;`),
+    message
+  );
+} // end prettyLog
