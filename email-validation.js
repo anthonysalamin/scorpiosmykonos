@@ -106,20 +106,23 @@ function emailValidation() {
 function prettyLog(status, message) {
   let color;
   switch (status) {
+      case "info":
+      color = "#4DD0E1";
+      break;
     case "success":
-      color = "green";
+      color = "#1DE9B6";
       break;
     case "loaded":
-      color = "green";
+      color = "#1DE9B6";
       break;
     case "warning":
-      color = "orange";
+      color = "#FFC107";
       break;
     case "error":
-      color = "red";
+      color = "#FF3D00";
       break;
     default:
-      color = "grey";
+      color = "#90A4AE";
   }
   console.log(
     `%c${status}`,
