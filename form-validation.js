@@ -12,7 +12,7 @@
 function requiredCheck() {
   // globals
   const log = console.log,
-    forms = new Set(document.getElementsByClassName("form-block")),
+    forms = new Set(document.getElementsByClassName("form-wrapper")),
     alertWrapper = document.getElementById("wrapper-alert-message"),
     alertWrap = document.getElementById("wrap-alert-message"),
     speed = 250;
