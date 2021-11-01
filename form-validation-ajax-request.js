@@ -1,5 +1,6 @@
 /*
  * 🟡 SCORPIOS | form validation + FormBackend AJAX request
+ * TO DO: to be tested in production
  * V.7 | 01.11.2021 @ 13:13 | anthonysalamin.ch
  */
 document.addEventListener("DOMContentLoaded", () => {
@@ -99,16 +100,12 @@ function formValidation() {
 
       // debug only
       prettyLog(
-        `warning`,
-        `warning`,
-        `required inputs: ${requiredInputs.length}`
+        `info`,
+        `info`,
+        `required inputs already filled: ${requiredFilledInputs.length}`
       );
-      prettyLog(
-        `warning`,
-        `warning`,
-        `required filled inputs: ${requiredFilledInputs.length}`
-      );
-      prettyLog(`warning`, `warning`, `required empty inputs: ${emptyInputs.length}`);
+      prettyLog(`warning`, `warning`, `required inputs yet to be filled: ${emptyInputs.length}`);
+      
     } // end inputsManagement
 
     submit.addEventListener("click", (event) => {
