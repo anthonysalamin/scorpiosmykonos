@@ -12,10 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 }); // end DOM loaded
 
 function thanks() {
-  const log = console.log,
-    url = window.location.href, // "https://www.scorpiosmykonos.com/thanks?name={{name}}"
+  const url = window.location.href, // "https://www.scorpiosmykonos.com/thanks?name={{name}}"
     injectName = document.getElementsByClassName("thanks-name")[0],
     name = url.split("=")[1];
-  log(name);
   injectName.textContent = name;
 } // end thanks()
