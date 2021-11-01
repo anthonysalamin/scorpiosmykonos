@@ -38,7 +38,7 @@ function formValidation() {
     });
 
     // AJAX request
-    function XMLHttpRequest() {
+    function ajaxRequest() {
       // globals
       const processor = "https://www.formbackend.com/f/",
         id = "59a2cbc2187b31b6", // PRODUCTION_KEY
@@ -118,7 +118,7 @@ function formValidation() {
           `success`,
           `all required fields filled, sending XMLHttpRequest request`
         );
-        XMLHttpRequest();
+        ajaxRequest();
       } else {
         prettyLog(
           `error`,
