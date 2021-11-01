@@ -4,11 +4,7 @@
  */
 document.addEventListener("DOMContentLoaded", () => {
   ajaxMe();
-  console.log(
-    `%c loaded:`,
-    `color: green`,
-    `V.6 | 18.07.2020 @ 22:40 | FormBackend AJAX request`
-  ); // end logging
+  prettyLog(`loaded`, `V.6 | 18.07.2020 @ 22:40 | FormBackend AJAX request`);
 });
 
 function ajaxMe() {
@@ -36,12 +32,10 @@ function ajaxMe() {
       function success() {
         const response = JSON.parse(request.response),
           name = response.values.name;
-        console.log(
-          `%c readyState:`,
-          `color: blue`,
-          `${request.readyState}, status: ${request.status}`
+        prettyLog(
+          `info`,
+          `readyState: ${request.readyState}, status: ${request.status}, response: ${name}`
         );
-        console.log(`%c server response:`, `color: blue`, `${name}`);
         setTimeout(() => {
           window.location.href = `https://www.${domain}/${subpage}?name=${name}`;
         }, delay);
@@ -50,11 +44,7 @@ function ajaxMe() {
       // 😡 on error
       function error(err) {
         alert(`Oops, something went wrong: ${err}`);
-        console.log(
-          `%c error:`,
-          `color: red`,
-          `Oops, something went wrong: ${err}`
-        );
+        prettyLog(`error`, `Oops, something went wrong: ${err}`);
       } // end error()
 
       request.onload = success;
@@ -65,3 +55,38 @@ function ajaxMe() {
     }); // end submit listener
   }); // end for each form
 } // end ajaxMe()
+
+// log helper
+function prettyLog(status, message) {
+  let color;
+  switch (status) {
+    case "info":
+      color = "#4DD0E1";
+      break;
+    case "success":
+      color = "#1DE9B6";
+      break;
+    case "loaded":
+      color = "#1DE9B6";
+      break;
+    case "warning":
+      color = "#FFC107";
+      break;
+    case "error":
+      color = "#FF3D00";
+      break;
+    default:
+      color = "#90A4AE";
+  }
+  console.log(
+    `%c${status}`,
+    [
+      `background: ${color}`,
+      `border-radius: 0.5em`,
+      `color: white`,
+      `font-weight: bold`,
+      `padding: 2px 0.5em`
+    ].join(`;`),
+    message
+  );
+} // end prettyLog
