@@ -5,13 +5,10 @@
  */
 document.addEventListener("DOMContentLoaded", () => {
   datePicker();
-  console.log(
-    `%c loaded:`,
-    `color: green`,
-    `V.15 | 28.10.2021 @ 23:13 | date picker`
-  ); // end logging
+  prettyLog(`success`, `loaded`, `V.15 | 28.10.2021 @ 23:13 | date picker`);
 }); // end DOM listener
 
+// date picker handling
 function datePicker() {
   // options
   const seasonHasAnEnd = true,
@@ -102,6 +99,12 @@ function datePicker() {
       "click",
       function () {
         if (Date.parse(today) > Date.parse(max) && seasonHasAnEnd) {
+          // season has ended
+          prettyLog(
+            `warning`,
+            `warning`,
+            `season has ended, aborting date picker initialisation`
+          );
           // define input disabled css
           const inputDisabledStyle = `
               input:disabled {
@@ -143,3 +146,35 @@ function datePicker() {
     ); // end click listener
   }); // end for each form
 } // end datePicker()
+
+// log helper
+function prettyLog(status, hint, message) {
+  let color;
+  switch (status) {
+    case "info":
+      color = "#3498DB";
+      break;
+    case "success":
+      color = "#27AE60";
+      break;
+    case "warning":
+      color = "#E67E22";
+      break;
+    case "error":
+      color = "#E74C3C";
+      break;
+    default:
+      color = "#90A4AE";
+  }
+  console.log(
+    `%c${hint}`,
+    [
+      `background: ${color}`,
+      `border-radius: 0.5em`,
+      `color: white`,
+      `font-weight: bold`,
+      `padding: 2px 0.5em`
+    ].join(`;`),
+    message
+  );
+} // end prettyLog
