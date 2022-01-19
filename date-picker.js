@@ -125,7 +125,7 @@ function datePicker() {
             const head =
                 document.head || document.getElementsByTagName("head")[0],
               style = document.createElement("style");
-            style.type = "text/css";
+            // style.type = "text/css"; // commented out 19.01.2022 because type is deprecated
             style.appendChild(document.createTextNode(css));
             head.appendChild(style);
           }
