@@ -5,14 +5,14 @@
  */
 document.addEventListener("DOMContentLoaded", () => {
   datePicker();
-  prettyLog(`success`, `loaded`, `V.15 | 28.10.2021 @ 23:13 | date picker`);
+  prettyLog(`success`, `loaded`, `V.15 | 04.03.2022 @ 09:54 | date picker`);
 }); // end DOM listener
 
 // date picker handling
 function datePicker() {
   // options
   const seasonHasAnEnd = true,
-    seasonStart = { day: 15, month: 5, year: 2022 },
+    seasonStart = { day: 28, month: 5, year: 2022 },
     seasonEnd = { day: 3, month: 10, year: 2022 },
     daysLimit = 30;
 
