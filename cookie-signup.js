@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function cookieSignup() {
   // globals
   const log = console.log,
-    cookieName = "SCORPIOS_SIGNUP_2022",
+    cookieName = "SCORPIOS_SIGNUP_04_04_2022",
     cookieValue = "AGREED",
     popupDelay = 8, // delay in seconds after which the popup appears
     dayStored = 365, // days during which the cookie is stored in user's browser
