@@ -1,79 +1,72 @@
-/*
- * 🟢 SCORPIOS | sevenrooms-widget | v.2
- * build 09.04.22 @ 13:19
- * © 2022 anthonysalamin.ch
- */
+console.log(
+  `%c loaded:`,
+  `color: green`,
+  `SCORPIOS | sevenrooms-widget.js | v.3.1.0 | 22.04.2022 @14:00`
+);
 
+// on DOM loaded handle sevenrooms integration
 document.addEventListener("DOMContentLoaded", () => {
-  handleSevenRooms();
-  prettyLog(
-    `info`,
-    `loaded`,
-    `SCORPIOS | sevenrooms-widget | v.2 | build 09.04.22 @ 13:19`
-  );
-}); // end DOM listener
+  handleAPIinjection();
+});
 
-// initialise sevenrooms for all buttons
-function handleSevenRooms() {
-  const buttons = document.querySelectorAll(".btn-widget");
+// 🥬 helper | check if current URL needs API injection
+function checkNeededURLs() {
+  const protocol = "https://www",
+    neededURLs = [
+      `${protocol}.scorpiosmykonos.com/`,
+      `${protocol}.scorpiosmykonos.com/reserve`
+    ],
+    currentURL = window.location.href;
+  return neededURLs.includes(currentURL);
+}
+
+// 🍑 inject API ind DOM based on URL check
+function handleAPIinjection() {
+  console.time("🍈 handleAPIinjection");
+  if (!checkNeededURLs()) return;
+  // scoped
+  const source = `https://www.sevenrooms.com/widget/embed.js`,
+    script = document.createElement("script");
+  script.setAttribute("async", "");
+  script.setAttribute("src", `${source}`);
+  document.body.append(script);
+  
+  script.onload = () => initialiseSevenRooms();
+  script.onerror = () => console.error(`error loading "${source}"`);
+  console.timeEnd("🍈 handleAPIinjection");
+} // end handleAPIinjection()
+
+// 🍑 initialise sevenrooms for each button
+function initialiseSevenRooms() {
+  console.time("🍈 initialiseSevenRooms");
+  // scoped
+  const group = "scorpiosmykonos",
+    locations = ["beach", "sunsetbeach", "restaurant"],
+    buttons = document.querySelectorAll(".btn-widget");
+
   Array.from(buttons).forEach((button) => {
     const venueId = button.dataset.venue,
       triggerId = button.id;
 
-    // inject all venues if needed
-    function handleVenues(triggerId) {
-      if (venueId == "scorpiosmykonosgroup") {
-        return [
-          "scorpiosmykonosbeach",
-          "scorpiosmykonossunsetbeach",
-          "scorpiosmykonosrestaurant"
-        ];
+    // define "allVenues", if needed
+    function allVenues() {
+      if (venueId == `${group}group`) {
+        return locations.map((location) => `${group}${location}`);
       } else {
         return [];
       } // end if
     }
 
-    // initialise widget
+    // inject values + initialise widget
     SevenroomsWidget.init({
       venueId: venueId,
-      allVenues: handleVenues(triggerId),
+      allVenues: allVenues(),
       triggerId: triggerId,
       type: "reservations",
       styleButton: false
-    }); // end SevenroomsWidget init
+    });
   }); // end for each button
-} // end handleSevenRooms()
-
-// helper | log function
-function prettyLog(status, hint, message) {
-  let color;
-  switch (status) {
-    case "info":
-      color = "#3498DB";
-      break;
-    case "success":
-      color = "#27AE60";
-      break;
-    case "warning":
-      color = "#E67E22";
-      break;
-    case "error":
-      color = "#E74C3C";
-      break;
-    default:
-      color = "#90A4AE";
-  }
-  console.log(
-    `%c${hint}`,
-    [
-      `background: ${color}`,
-      `border-radius: 0.5em`,
-      `color: white`,
-      `font-weight: bold`,
-      `padding: 2px 0.5em`
-    ].join(`;`),
-    message
-  );
-} // end prettyLog
+  console.timeEnd("🍈 initialiseSevenRooms");
+} // end initialiseSevenRooms()
 
 // go get an 🍦
