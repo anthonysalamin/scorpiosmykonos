@@ -13,8 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function checkNeededURLs() {
   const protocol = "https://www",
     neededURLs = [
-      `${protocol}.scorpiosmykonos.com/`,
-      `${protocol}.scorpiosmykonos.com/reserve`
+      `${protocol}.scorpiosmykonos.com/`, // production
+      `${protocol}.scorpiosmykonos.webflow.io/`, // development
+      `${protocol}.scorpiosmykonos.com/reserve`, // production
+      `${protocol}.scorpiosmykonos.webflow.io/reserve` // development
     ],
     currentURL = window.location.href;
   return neededURLs.includes(currentURL);
