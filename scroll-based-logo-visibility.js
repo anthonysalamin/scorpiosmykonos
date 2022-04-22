@@ -1,7 +1,7 @@
 console.log(
   `%c loaded:`,
   `color: green`,
-  `SCORPIOS | scroll-based-logo-visibility.js | V.1.0.2 | 22.04.2022 @14:00`
+  `SCORPIOS | scroll-based-logo-visibility.js | V.1.0.2 | 22.04.2022 @14:18`
 );
 
 // on DOM loaded
