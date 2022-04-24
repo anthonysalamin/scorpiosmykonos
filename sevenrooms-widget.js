@@ -1,7 +1,7 @@
 console.log(
   `%c loaded:`,
   `color: green`,
-  `SCORPIOS | sevenrooms-widget.js | v.3.1.0 | 22.04.2022 @14:18`
+  `SCORPIOS | sevenrooms-widget.js | v.3.1.0 | 24.04.2022 @12:13`
 );
 
 // on DOM loaded handle sevenrooms integration
@@ -11,14 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 🥬 helper | check if current URL needs API injection
 function checkNeededURLs() {
-  const protocol = "https://www",
-    neededURLs = [
-      `${protocol}.scorpiosmykonos.com/`, // production
-      `${protocol}.scorpiosmykonos.webflow.io/`, // development
-      `${protocol}.scorpiosmykonos.com/reserve`, // production
-      `${protocol}.scorpiosmykonos.webflow.io/reserve` // development
-    ],
-    currentURL = window.location.href;
+  // scoped
+  const url = {
+    protocol: "https",
+    subDomain: "www",
+    rootDomain: "scorpiosmykonos",
+    TLD: ["com", "webflow.io"], // Top Level Domain
+    path: ["", "reserve"]
+  };
+  const neededURLs = [
+    `${url.protocol}://${url.subDomain}.${url.rootDomain}.${url.TLD[0]}/${url.path[0]}`, // root (production)
+    `${url.protocol}://${url.subDomain}.${url.rootDomain}.${url.TLD[1]}/${url.path[0]}`, // root (development)
+    `${url.protocol}://${url.subDomain}.${url.rootDomain}.${url.TLD[0]}/${url.path[1]}`, // /reserve (production)
+    `${url.protocol}://${url.subDomain}.${url.rootDomain}.${url.TLD[1]}/${url.path[1]}` // /reserve (development)
+  ];
+  const currentURL = window.location.href;
+  console.log(neededURLs[0], neededURLs[1], neededURLs[2], neededURLs[3]);
   return neededURLs.includes(currentURL);
 }
 
@@ -29,16 +37,17 @@ function handleAPIinjection() {
   // scoped
   const source = `https://www.sevenrooms.com/widget/embed.js`,
     script = document.createElement("script");
+  // set script attributes
   script.setAttribute("async", "");
   script.setAttribute("src", `${source}`);
   document.body.append(script);
-  
+  // handle onload / onerror
   script.onload = () => initialiseSevenRooms();
   script.onerror = () => console.error(`error loading "${source}"`);
   console.timeEnd("🍈 handleAPIinjection");
-} // end handleAPIinjection()
+}
 
-// 🍑 initialise sevenrooms for each button
+// 🍑 initialise sevenrooms
 function initialiseSevenRooms() {
   console.time("🍈 initialiseSevenRooms");
   // scoped
@@ -46,6 +55,7 @@ function initialiseSevenRooms() {
     locations = ["beach", "sunsetbeach", "restaurant"],
     buttons = document.querySelectorAll(".btn-widget");
 
+  // for each button, init SevenroomsWidget
   Array.from(buttons).forEach((button) => {
     const venueId = button.dataset.venue,
       triggerId = button.id;
@@ -57,7 +67,7 @@ function initialiseSevenRooms() {
       } else {
         return [];
       } // end if
-    }
+    } // end allVenues()
 
     // inject values + initialise widget
     SevenroomsWidget.init({
@@ -68,6 +78,7 @@ function initialiseSevenRooms() {
       styleButton: false
     });
   }); // end for each button
+
   console.timeEnd("🍈 initialiseSevenRooms");
 } // end initialiseSevenRooms()
 
