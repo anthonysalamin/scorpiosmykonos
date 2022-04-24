@@ -12,23 +12,27 @@ document.addEventListener("DOMContentLoaded", () => {
 // 🥬 helper | check if current URL needs API injection
 function checkNeededURLs() {
   // scoped
-  const url = {
-    protocol: "https",
-    subDomain: "www",
-    rootDomain: "scorpiosmykonos",
-    TLD: ["com", "webflow.io"], // Top Level Domain
-    path: ["", "reserve"]
-  };
-
+  const currentURL = window.location.href,
+    urlSchema = {
+      protocol: "https",
+      subDomain: "www",
+      rootDomain: "scorpiosmykonos",
+      TLDs: ["com", "webflow.io"], // Top Level Domain
+      paths: ["", "reserve"]
+    };
   let neededURLs = [];
-  Array.from(url.TLD).forEach((TLD) => {
-    const newURLs = url.path.map((path) => `${url.protocol}://${url.subDomain}.${url.rootDomain}.${TLD}/${path}`);
-    neededURLs.push(...newURLs);
+
+  // build URLs list
+  Array.from(urlSchema.TLDs).forEach((TLD) => {
+    const URls = urlSchema.paths.map(
+      (path) =>
+        `${urlSchema.protocol}://${urlSchema.subDomain}.${urlSchema.rootDomain}.${TLD}/${path}`
+    );
+    neededURLs.push(...URls);
   });
-  
+
   console.table(neededURLs);
-  const currentURL = window.location.href;
-  return neededURLs.includes(currentURL);
+  return neededURLs.includes(currentURL); // boolean
 }
 
 // 🍑 inject API ind DOM based on URL check
