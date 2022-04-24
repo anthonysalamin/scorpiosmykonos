@@ -1,7 +1,7 @@
 console.log(
-  `%c loaded:`,
+  `%c deployed:`,
   `color: green`,
-  `SCORPIOS | scroll-based-logo-visibility.js | V.1.0.2 | 22.04.2022 @14:18`
+  `🟢 SCORPIOS | scroll-based-logo-visibility | V.1.0.2 | 24.04.2022 @20:16`
 );
 
 // on DOM loaded
@@ -47,14 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // debug
-    /*
     if (!production) {
       console.clear();
       log(`scroll position: ${currentScrollpos.toFixed()} px`);
       log(`logotype is: ${inRange ? "visible" : "hidden"}`);
       log(`logotype.style.opacity: ${logotype.style.opacity}`);
     }
-    */
   }
 
   // run triggerMe on scroll every 25 milliseconds
