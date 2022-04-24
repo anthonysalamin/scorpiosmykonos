@@ -1,7 +1,8 @@
+console.clear();
 console.log(
   `%c loaded:`,
   `color: green`,
-  `🟢 SCORPIOS | sevenrooms-widget.js | v.3.1.1 | 24.04.2022 @12:57`
+  `🟢 SCORPIOS | sevenrooms-widget.js | v.3.1.2 | 24.04.2022 @16:37`
 );
 
 // on DOM loaded handle sevenrooms integration
@@ -19,14 +20,15 @@ function checkNeededURLs() {
     TLD: ["com", "webflow.io"], // Top Level Domain
     path: ["", "reserve"]
   };
-  const neededURLs = [
-    `${url.protocol}://${url.subDomain}.${url.rootDomain}.${url.TLD[0]}/${url.path[0]}`, // root (production)
-    `${url.protocol}://${url.subDomain}.${url.rootDomain}.${url.TLD[1]}/${url.path[0]}`, // root (development)
-    `${url.protocol}://${url.subDomain}.${url.rootDomain}.${url.TLD[0]}/${url.path[1]}`, // /reserve (production)
-    `${url.protocol}://${url.subDomain}.${url.rootDomain}.${url.TLD[1]}/${url.path[1]}` // /reserve (development)
-  ];
+
+  let neededURLs = [];
+  Array.from(url.TLD).forEach((TLD) => {
+    const newURLs = url.path.map((path) => `${url.protocol}://${url.subDomain}.${url.rootDomain}.${TLD}/${path}`);
+    neededURLs.push(...newURLs);
+  });
+  
+  console.table(neededURLs);
   const currentURL = window.location.href;
-  // console.table(neededURLs);
   return neededURLs.includes(currentURL);
 }
 
