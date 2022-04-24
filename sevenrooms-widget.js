@@ -1,7 +1,7 @@
 console.log(
   `%c loaded:`,
   `color: green`,
-  `🟢 SCORPIOS | sevenrooms-widget.js | v.3.1.2 | 24.04.2022 @16:37`
+  `🟢 SCORPIOS | sevenrooms-widget | v.3.1.2 | 24.04.2022 @16:37`
 );
 
 // on DOM loaded handle sevenrooms integration
