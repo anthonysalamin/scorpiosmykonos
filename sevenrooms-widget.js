@@ -26,7 +26,7 @@ function checkNeededURLs() {
     `${url.protocol}://${url.subDomain}.${url.rootDomain}.${url.TLD[1]}/${url.path[1]}` // /reserve (development)
   ];
   const currentURL = window.location.href;
-  // console.log(neededURLs[0], neededURLs[1], neededURLs[2], neededURLs[3]);
+  // console.table(neededURLs);
   return neededURLs.includes(currentURL);
 }
 
