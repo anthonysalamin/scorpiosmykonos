@@ -32,7 +32,7 @@ function checkNeededURLs() {
 
 // 🍑 inject API ind DOM based on URL check
 function handleAPIinjection() {
-  console.time("🍈 handleAPIinjection");
+  console.time("⏱ handleAPIinjection");
   if (!checkNeededURLs()) return;
   // scoped
   const source = `https://www.sevenrooms.com/widget/embed.js`,
@@ -44,12 +44,12 @@ function handleAPIinjection() {
   // handle onload / onerror
   script.onload = () => initialiseSevenRooms();
   script.onerror = () => console.error(`error loading "${source}"`);
-  console.timeEnd("🍈 handleAPIinjection");
+  console.timeEnd("⏱ handleAPIinjection");
 }
 
 // 🍑 initialise sevenrooms
 function initialiseSevenRooms() {
-  console.time("🍈 initialiseSevenRooms");
+  console.time("⏱ initialiseSevenRooms");
   // scoped
   const group = "scorpiosmykonos",
     locations = ["beach", "sunsetbeach", "restaurant"],
@@ -79,7 +79,7 @@ function initialiseSevenRooms() {
     });
   }); // end for each button
 
-  console.timeEnd("🍈 initialiseSevenRooms");
+  console.timeEnd("⏱ initialiseSevenRooms");
 } // end initialiseSevenRooms()
 
 // go get an 🍦
