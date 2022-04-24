@@ -1,7 +1,7 @@
 console.log(
-  `%c loaded:`,
+  `%c deployed:`,
   `color: green`,
-  `🟢 SCORPIOS | sevenrooms-widget | v.3.1.2 | 24.04.2022 @16:37`
+  `🟢 SCORPIOS | sevenrooms-widget | v.3.1.2 | 24.04.2022 @18:56`
 );
 
 // on DOM loaded handle sevenrooms integration
@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 🥬 helper | check if current URL needs API injection
 function checkNeededURLs() {
+  console.time("⏱ checkNeededURLs");
+  
   // scoped
   const currentURL = window.location.href,
     urlSchema = {
@@ -22,7 +24,7 @@ function checkNeededURLs() {
     };
   let neededURLs = [];
 
-  // build URLs list
+  // build needed URLs list
   Array.from(urlSchema.TLDs).forEach((TLD) => {
     const URls = urlSchema.paths.map(
       (path) =>
@@ -32,6 +34,7 @@ function checkNeededURLs() {
   });
 
   console.table(neededURLs);
+  console.timeEnd("⏱ checkNeededURLs");
   return neededURLs.includes(currentURL); // boolean
 }
 
@@ -39,13 +42,16 @@ function checkNeededURLs() {
 function handleAPIinjection() {
   console.time("⏱ handleAPIinjection");
   if (!checkNeededURLs()) return;
+  
   // scoped
   const source = `https://www.sevenrooms.com/widget/embed.js`,
     script = document.createElement("script");
+  
   // set script attributes
   script.setAttribute("async", "");
   script.setAttribute("src", `${source}`);
   document.body.append(script);
+  
   // handle onload / onerror
   script.onload = () => initialiseSevenRooms();
   script.onerror = () => console.error(`error loading "${source}"`);
@@ -55,6 +61,7 @@ function handleAPIinjection() {
 // 🍑 initialise sevenrooms
 function initialiseSevenRooms() {
   console.time("⏱ initialiseSevenRooms");
+  
   // scoped
   const group = "scorpiosmykonos",
     locations = ["beach", "sunsetbeach", "restaurant"],
