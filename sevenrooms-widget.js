@@ -1,4 +1,3 @@
-console.clear();
 console.log(
   `%c loaded:`,
   `color: green`,
