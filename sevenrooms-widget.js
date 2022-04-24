@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 🥬 helper | check if current URL needs API injection
 function checkNeededURLs() {
-  console.time("⏱ checkNeededURLs");
-  
-  // scoped
+  console.time("🥬 checkNeededURLs");
+
+  // scoped variables
   let neededURLs = [];
   const currentURL = window.location.href,
     urlSchema = {
@@ -34,64 +34,59 @@ function checkNeededURLs() {
   });
 
   console.table(neededURLs);
-  console.timeEnd("⏱ checkNeededURLs");
+  console.timeEnd("🥬 checkNeededURLs");
   return neededURLs.includes(currentURL); // boolean
 }
 
 // 🍑 inject API ind DOM based on URL check
 function handleAPIinjection() {
-  console.time("⏱ handleAPIinjection");
+  console.time("🍑 handleAPIinjection");
   if (!checkNeededURLs()) return;
-  
-  // scoped
+
+  // scoped variables
   const source = `https://www.sevenrooms.com/widget/embed.js`,
     script = document.createElement("script");
-  
+    
   // set script attributes
   script.setAttribute("async", "");
   script.setAttribute("src", `${source}`);
   document.body.append(script);
-  
+
   // handle onload / onerror
   script.onload = () => initialiseSevenRooms();
   script.onerror = () => console.error(`error loading "${source}"`);
-  console.timeEnd("⏱ handleAPIinjection");
+  console.timeEnd("🍑 handleAPIinjection");
 }
 
-// 🍑 initialise sevenrooms
+// 🍒 initialise sevenrooms
 function initialiseSevenRooms() {
-  console.time("⏱ initialiseSevenRooms");
-  
-  // scoped
+  console.time("🍒 initialiseSevenRooms");
+
+  // scoped variables
   const group = "scorpiosmykonos",
     locations = ["beach", "sunsetbeach", "restaurant"],
     buttons = document.querySelectorAll(".btn-widget");
 
   // for each button, init SevenroomsWidget
   Array.from(buttons).forEach((button) => {
+    
+    // scoped variables
     const venueId = button.dataset.venue,
-      triggerId = button.id;
-
-    // define "allVenues", if needed
-    function allVenues() {
-      if (venueId == `${group}group`) {
-        return locations.map((location) => `${group}${location}`);
-      } else {
-        return [];
-      } // end if
-    } // end allVenues()
+      triggerId = button.id,
+      locationsList = locations.map((location) => `${group}${location}`),
+      allVenues = venueId == `${group}group` ? locationsList : [];
 
     // inject values + initialise widget
     SevenroomsWidget.init({
       venueId: venueId,
-      allVenues: allVenues(),
+      allVenues: allVenues,
       triggerId: triggerId,
       type: "reservations",
       styleButton: false
     });
+    
   }); // end for each button
-
-  console.timeEnd("⏱ initialiseSevenRooms");
-} // end initialiseSevenRooms()
+  console.timeEnd("🍒 initialiseSevenRooms");
+}
 
 // go get an 🍦
