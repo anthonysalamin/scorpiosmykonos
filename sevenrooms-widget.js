@@ -14,6 +14,7 @@ function checkNeededURLs() {
   console.time("⏱ checkNeededURLs");
   
   // scoped
+  let neededURLs = [];
   const currentURL = window.location.href,
     urlSchema = {
       protocol: "https",
@@ -22,7 +23,6 @@ function checkNeededURLs() {
       TLDs: ["com", "webflow.io"], // Top Level Domain
       paths: ["", "reserve"]
     };
-  let neededURLs = [];
 
   // build needed URLs list
   Array.from(urlSchema.TLDs).forEach((TLD) => {
