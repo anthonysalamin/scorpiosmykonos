@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
   handleAPIinjection();
 });
 
-// 🥬 helper | check if current URL needs API injection
+// 🥬 helper | check iff current URL needs API injection
 function checkNeededURLs() {
   console.time("🥬 checkNeededURLs");
 
-  // scoped variables
+  // scoped
   let neededURLs = [];
   const currentURL = window.location.href,
     urlSchema = {
@@ -26,10 +26,13 @@ function checkNeededURLs() {
 
   // build needed URLs list
   Array.from(urlSchema.TLDs).forEach((TLD) => {
-    const URls = urlSchema.paths.map(
-      (path) =>
-        `${urlSchema.protocol}://${urlSchema.subDomain}.${urlSchema.rootDomain}.${TLD}/${path}`
-    );
+    // scoped
+    const protocol = urlSchema.protocol,
+      subDomain = urlSchema.subDomain,
+      rootDomain = urlSchema.rootDomain,
+      URls = urlSchema.paths.map(
+        (path) => `${protocol}://${subDomain}.${rootDomain}.${TLD}/${path}`
+      );
     neededURLs.push(...URls);
   });
 
@@ -43,10 +46,10 @@ function handleAPIinjection() {
   console.time("🍑 handleAPIinjection");
   if (!checkNeededURLs()) return;
 
-  // scoped variables
+  // scoped
   const source = `https://www.sevenrooms.com/widget/embed.js`,
     script = document.createElement("script");
-    
+
   // set script attributes
   script.setAttribute("async", "");
   script.setAttribute("src", `${source}`);
@@ -62,14 +65,13 @@ function handleAPIinjection() {
 function initialiseSevenRooms() {
   console.time("🍒 initialiseSevenRooms");
 
-  // scoped variables
+  // scoped
   const group = "scorpiosmykonos",
     locations = ["beach", "sunsetbeach", "restaurant"],
     buttons = document.querySelectorAll(".btn-widget");
 
   // for each button, init SevenroomsWidget
   Array.from(buttons).forEach((button) => {
-    
     // scoped variables
     const venueId = button.dataset.venue,
       triggerId = button.id,
@@ -84,7 +86,6 @@ function initialiseSevenRooms() {
       type: "reservations",
       styleButton: false
     });
-    
   }); // end for each button
   console.timeEnd("🍒 initialiseSevenRooms");
 }
