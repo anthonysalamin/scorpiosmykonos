@@ -1,10 +1,48 @@
 console.log(
   `%c deployed:`,
   `color: green`,
-  `🟢 SCORPIOS | tabs v.3.0.0 | 09.05.22 @19:18`
+  `🟢 SCORPIOS | tabs v.3.0.1 | 11.05.22 @11:39`
 );
 
 document.addEventListener("DOMContentLoaded", () => {
+  injectGSAP();
+});
+
+// 🥬 helper | inject GSAP API
+function injectGSAP() {
+  console.time("🔵 injectGSAP()");
+  // scoped
+  const source = `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js`,
+    script = document.createElement("script");
+  // set script attributes
+  script.setAttribute("async", "");
+  script.setAttribute("src", `${source}`);
+  document.body.append(script);
+  // handle onload / onerror
+  script.onload = () => ScrollToPlugin();
+  script.onerror = () => console.error(`Oops, error loading "${source}"`);
+  console.timeEnd("🔵 injectGSAP()");
+}
+
+// 🥬 helper | inject ScrollToPlugin API
+function ScrollToPlugin() {
+  console.time("🔵 ScrollToPlugin()");
+  // scoped
+  const source = `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js`,
+    script = document.createElement("script");
+  // set script attributes
+  script.setAttribute("async", "");
+  script.setAttribute("src", `${source}`);
+  document.body.append(script);
+  // handle onload / onerror
+  script.onload = () => handleScrolling();
+  script.onerror = () => console.error(`Oops, error loading "${source}"`);
+  console.timeEnd("🔵 ScrollToPlugin()");
+}
+
+// 🍑 handle scrolling
+function handleScrolling() {
+  console.time("🔵 handleScrolling()");
   // globals
   const production = true,
     log = console.log,
@@ -15,20 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
     offset = 50,
     ScrollDuration = 1.2;
 
-  // checkOnScroll();
-  function checkOnScroll() {
-    window.addEventListener("scroll", () => {
-      const menuWrapperPosition = menuWrapper.getBoundingClientRect().top;
-      const scrollPosition = window.scrollY;
-      log(`menu @ scroll Y: ${menuWrapperPosition.toFixed(decimalPrecision)}px`);
-      log(`scroll @ scroll Y: ${scrollPosition.toFixed(decimalPrecision)}px`);
-    });
-  }
-
   // listen to clicks
   Array.from(links).forEach((link) => {
     link.addEventListener("click", () => {
-      
       // 🥑 get menu position
       const menuWrapperPosition = menuWrapper.getBoundingClientRect().top;
       log(`menu @ clicked Y: ${menuWrapperPosition.toFixed(decimalPrecision)}px`);
@@ -43,9 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: ScrollDuration,
         ease: Power4.easeInOut
       });
-      
     }); // end click
   }); // end for each
-}); // end DOM loaded
+  console.timeEnd("🔵 handleScrolling()");
+}
 
 // go get an 🍦
