@@ -19,13 +19,13 @@ function injectGSAP() {
   script.setAttribute("src", `${source}`);
   document.body.append(script);
   // handle onload / onerror
-  script.onload = () => ScrollToPlugin();
+  script.onload = () => injectScrollToPlugin();
   script.onerror = () => console.error(`Oops, error loading "${source}"`);
   console.timeEnd("🔵 injectGSAP()");
 }
 
 // 🥬 helper | inject ScrollToPlugin API
-function ScrollToPlugin() {
+function injectScrollToPlugin() {
   console.time("🔵 ScrollToPlugin()");
   // scoped
   const source = `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js`,
@@ -56,13 +56,14 @@ function handleScrolling() {
   // listen to clicks
   Array.from(links).forEach((link) => {
     link.addEventListener("click", () => {
+      
       // 🥑 get menu position
       const menuWrapperPosition = menuWrapper.getBoundingClientRect().top;
-      log(`menu @ clicked Y: ${menuWrapperPosition.toFixed(decimalPrecision)}px`);
+      // log(`menu @ clicked Y: ${menuWrapperPosition.toFixed(decimalPrecision)}px`);
 
       // 🍇 get current scroll position
       const scrollPosition = window.scrollY;
-      log(`scroll @ clicked Y: ${scrollPosition.toFixed(decimalPrecision)}px`);
+      // log(`scroll @ clicked Y: ${scrollPosition.toFixed(decimalPrecision)}px`);
 
       // 🍈 scroll to menu position
       gsap.to(window, {
@@ -70,6 +71,7 @@ function handleScrolling() {
         duration: ScrollDuration,
         ease: Power4.easeInOut
       });
+      
     }); // end click
   }); // end for each
   console.timeEnd("🔵 handleScrolling()");
