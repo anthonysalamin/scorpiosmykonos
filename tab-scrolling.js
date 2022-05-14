@@ -1,7 +1,7 @@
 console.log(
-  `%c deployed:`,
+  `%c🟢 deployed:`,
   `color: green`,
-  `🟢 SCORPIOS | tabs v.3.0.1 | 11.05.22 @11:39`
+  `SCORPIOS | tabs v.3.0.1 | 11.05.22 @11:39`
 );
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -11,32 +11,26 @@ document.addEventListener("DOMContentLoaded", () => {
 // 🥬 helper | inject GSAP API
 function injectGSAP() {
   console.time("🔵 injectGSAP()");
-  // scoped
   const source = `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js`,
     script = document.createElement("script");
-  // set script attributes
   script.setAttribute("async", "");
   script.setAttribute("src", `${source}`);
-  document.body.append(script);
-  // handle onload / onerror
   script.onload = () => injectScrollToPlugin();
   script.onerror = () => console.error(`Oops, error loading "${source}"`);
+  document.body.append(script);
   console.timeEnd("🔵 injectGSAP()");
 }
 
 // 🥬 helper | inject ScrollToPlugin API
 function injectScrollToPlugin() {
   console.time("🔵 ScrollToPlugin()");
-  // scoped
   const source = `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js`,
     script = document.createElement("script");
-  // set script attributes
   script.setAttribute("async", "");
   script.setAttribute("src", `${source}`);
-  document.body.append(script);
-  // handle onload / onerror
   script.onload = () => handleScrolling();
   script.onerror = () => console.error(`Oops, error loading "${source}"`);
+  document.body.append(script);
   console.timeEnd("🔵 ScrollToPlugin()");
 }
 
