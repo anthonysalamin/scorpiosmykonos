@@ -1,13 +1,13 @@
 /*
  * 🟢 SCORPIOS | cookie signup
- * V.1 | 26.10.2021 @ 18:35 | anthonysalamin.ch
+ * V.1 | 17.05.2022 @ 10:21
  */
 document.addEventListener("DOMContentLoaded", () => {
-  cookieSignup();
+  // cookieSignup(); // ⚠️ remove comment to run script / show popups
   console.log(
     `%c loaded:`,
     `color: green`,
-    `V.1 | 26.10.2021 @ 18:35 | cookie signup`
+    `V.1 | 17.05.2022 @ 10:21 | cookie signup`
   ); // end logging
 }); // end DOMloaded
 
