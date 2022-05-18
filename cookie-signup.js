@@ -1,15 +1,11 @@
-/*
- * 🟢 SCORPIOS | cookie signup
- * V.1 | 17.05.2022 @ 10:21
- */
 document.addEventListener("DOMContentLoaded", () => {
-  // cookieSignup(); // ⚠️ remove comment to run script / show popups
   console.log(
-    `%c loaded:`,
+    `%c deployed:`,
     `color: green`,
-    `V.1 | 17.05.2022 @ 10:21 | cookie signup`
-  ); // end logging
-}); // end DOMloaded
+    `🟢 SCORPIOS | cookie signup v.1.0.1 | 17.05.2022 @ 10:21`
+  );
+  // cookieSignup(); // ⚠️ remove comment to run script / show popups
+});
 
 function cookieSignup() {
   // globals
@@ -49,7 +45,11 @@ function cookieSignup() {
     // 🧠 create cookie on button click to expire on newly defined date
     popupButtons.forEach((popupButton) => {
       popupButton.addEventListener("click", () => {
-        console.log(`%c success:`, `color: green`, `signup 🍪 created and stored`); // end logging
+        console.log(
+          `%c success:`,
+          `color: green`,
+          `signup 🍪 created and stored`
+        ); // end logging
         Cookies.set(cookieName, cookieValue, {
           expires: date
         }); // end set cookie
@@ -63,3 +63,25 @@ function cookieSignup() {
     ); // end logging
   } // end if
 } // end cookieSignup()
+
+// go get an 🍦
+
+/*.#&&(                   
+       #&&&&&&&&&&&&&&&&&&&&%           
+   /&&&&&&&&&&&&&&&&&&&&&&&&&&&&        
+   /&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&      
+     &&&&&&&            &&&&&&&&&&&&    
+                           &&&&&&&&&&   
+                            ,&&&&&&&&&  
+           .&&&&&&&&&&%      &&&&&&&&&  
+      &&&&&&&&&&&&&&&&&&&&&&& &&&&&&&&& 
+    &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
+  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
+ &&&&&&&&&&             %&&&&&&&&&&&&&& 
+ &&&&&&&&                  &&&&&&&&&&&  
+#&&&&&&&&                   &&&&&&&&&&  
+ &&&&&&&&&                &&&&&&&&&&&&& 
+ (&&&&&&&&&&          &&&&&&&&&&&&&&&&&&
+   &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+    ,&&&&&&&&&&&&&&&&&&&&&&&&&, &&&&&&&&
+       anthonysalamin.ch,     &&&&&&&*/

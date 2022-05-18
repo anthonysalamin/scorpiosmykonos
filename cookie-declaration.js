@@ -1,14 +1,10 @@
-/*
- * 🟢 SCORPIOS | cookie declaration
- * V.1 | 02.07.2020 @ 21:59 | anthonysalamin.ch
- */
 document.addEventListener("DOMContentLoaded", () => {
-  cookieDeclaration();
   console.log(
-    `%c loaded:`,
+    `%c deployed:`,
     `color: green`,
-    `V.1 | 02.07.2020 @ 21:59 | cookie declaration`
-  ); // end logging
+    `🟢 SCORPIOS | cookie declaration v.1.0.1 | 18.05.2022 @ 09:36`
+  );
+  cookieDeclaration();
 }); // end DOMloaded
 
 function cookieDeclaration() {
@@ -64,3 +60,25 @@ function cookieDeclaration() {
     ); // end logging
   } // end if
 } // end cookieDeclaration()
+
+// go get an 🍦
+
+/*.#&&(                   
+       #&&&&&&&&&&&&&&&&&&&&%           
+   /&&&&&&&&&&&&&&&&&&&&&&&&&&&&        
+   /&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&      
+     &&&&&&&            &&&&&&&&&&&&    
+                           &&&&&&&&&&   
+                            ,&&&&&&&&&  
+           .&&&&&&&&&&%      &&&&&&&&&  
+      &&&&&&&&&&&&&&&&&&&&&&& &&&&&&&&& 
+    &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
+  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
+ &&&&&&&&&&             %&&&&&&&&&&&&&& 
+ &&&&&&&&                  &&&&&&&&&&&  
+#&&&&&&&&                   &&&&&&&&&&  
+ &&&&&&&&&                &&&&&&&&&&&&& 
+ (&&&&&&&&&&          &&&&&&&&&&&&&&&&&&
+   &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+    ,&&&&&&&&&&&&&&&&&&&&&&&&&, &&&&&&&&
+       anthonysalamin.ch,     &&&&&&&*/
