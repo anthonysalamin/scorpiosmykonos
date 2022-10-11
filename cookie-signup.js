@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     `color: green`,
     `🟢 SCORPIOS | cookie signup v.1.0.1 | 17.05.2022 @ 10:21`
   );
-  // cookieSignup(); // ⚠️ remove comment to run script / show popups
-}); // end DOMloaded
+  cookieSignup();
+});
 
 function cookieSignup() {
   // globals
